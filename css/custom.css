@@ -323,3 +323,7 @@ div#archive {
     transition: .3s;
     top: -8px
 }
+.loading-img {
+  background: /img/favicon.png no-repeat center center;
+  background-size: cover;
+}
