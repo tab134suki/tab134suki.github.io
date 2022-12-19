@@ -8,7 +8,7 @@ if (document.body.clientWidth > 992) {
         var ScrollTop = $(window).scrollTop();
         /* 可滚动的高度 */
         var S_V = DocH - ViewH;
-        var Band_H = ScrollTop / (DocH - ViewH) * 100;
+        var Band_H = ScrollTop / (DocH - ViewH) * 70;
         return {
             ViewH: ViewH,
             DocH: DocH,
@@ -33,9 +33,9 @@ if (document.body.clientWidth > 992) {
                 zoom: 0.9,
                 borderRadius: 5 + 'px',
                 right: 60 + 'px',
-                nekoImg: "https://bu.dusays.com/2022/07/20/62d812db74be9.png",
-                hoverMsg: "喵喵喵~",
-                color: "#00FF80",
+                nekoImg: "https://www.z4a.net/images/2022/12/19/369704cabfde30abb.png",
+                hoverMsg: "你干嘛~",
+                color: "#07cb7c",
                 during: 500,
                 blog_body: "body",
             };
@@ -119,7 +119,7 @@ if (document.body.clientWidth > 992) {
     $(document).ready(function () {
         //部分自定义
         $("#myscoll").nekoScroll({
-            bgcolor: 'rgb(0 0 0 / .5)', //背景颜色，没有绳子背景图片时有效
+            bgcolor: 'rgb(7 255 124 / .5)', //背景颜色，没有绳子背景图片时有效
             borderRadius: '2em',
             zoom: 0.9
         }
@@ -144,3 +144,21 @@ if (document.body.clientWidth > 992) {
         */
     })
 }
+
+//动态标题
+var OriginTitile = document.title;
+var titleTime;
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = "w(ﾟДﾟ)w 不要走！再看看嘛！";
+    clearTimeout(titleTime);
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = "♪(^∇^*)欢迎肥来！" + OriginTitile;
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile;
+    }, 2000);
+  }
+});
