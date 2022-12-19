@@ -501,3 +501,13 @@ div#archive {
     }
 }
 /* 自定义底部  End */
+
+@font-face{
+    font-family: 'A';
+    font-display: swap;
+    src: url('/font/1.ttf') format("truetype");
+}
+
+body {
+    font-family: 'A';
+}
