@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tab134suki.github.io/zzq/index.html</loc>
+    <loc>https://tab134suki.github.io/time/index.html</loc>
     
     <lastmod>2022-12-20</lastmod>
     
@@ -11,7 +11,25 @@
   </url>
   
   <url>
-    <loc>https://tab134suki.github.io/time/index.html</loc>
+    <loc>https://tab134suki.github.io/posts/acb8/</loc>
+    
+    <lastmod>2022-12-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tab134suki.github.io/posts/acd5/</loc>
+    
+    <lastmod>2022-12-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tab134suki.github.io/zzq/index.html</loc>
     
     <lastmod>2022-12-20</lastmod>
     
@@ -39,15 +57,6 @@
   
   <url>
     <loc>https://tab134suki.github.io/posts/2013/</loc>
-    
-    <lastmod>2022-12-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tab134suki.github.io/posts/acb8/</loc>
     
     <lastmod>2022-12-19</lastmod>
     
