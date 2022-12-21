@@ -511,3 +511,9 @@ div#archive {
 body {
     font-family: 'A';
 }
+
+
+.loading-img {
+  background: url(https://www.z4a.net/images/2022/12/21/69b0b726526006364a7732c837828b3428f7492a.jpg) no-repeat center center;
+  background-size: cover;
+}
