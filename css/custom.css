@@ -511,6 +511,15 @@ div#archive {
 body {
     font-family: 'A';
 }
+@font-face{
+    font-family: 'B';
+    font-display: swap;
+    src: url('/font/2.ttf') format("truetype");
+}
+
+body {
+    font-family: 'B';
+}
 
 
 .loading-img {
