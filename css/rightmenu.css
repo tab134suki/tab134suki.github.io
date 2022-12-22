@@ -51,7 +51,7 @@
 }
 
 #rightMenu .rightMenu-group .rightMenu-item:hover {
-    background-color: #6f42c1;
+    background-color: #60e19e;
     color: #fff;
 }
 
@@ -112,7 +112,7 @@ body::-webkit-scrollbar {
     font-family: tzy;
     font-weight: 600;
     font-size: 16px;
-    color: #6f42c1;
+    color: #60e19e;
     display: none;
 }
 
