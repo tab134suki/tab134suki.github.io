@@ -5697,6 +5697,12 @@ blockquote.pullquote.right {
   background-color: rgba(0,0,0,0.7);
   content: '';
 }
+[data-theme='dark'] #web_bg {
+  background-image: url("https://www.z4a.net/images/2022/12/01/J.jpg");
+  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat center;
+}
 [data-theme='dark'] #article-container code {
   background: #2c2c2c;
 }
