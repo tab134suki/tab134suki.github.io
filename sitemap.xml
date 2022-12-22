@@ -11,6 +11,24 @@
   </url>
   
   <url>
+    <loc>https://tab134suki.github.io/image/index.html</loc>
+    
+    <lastmod>2022-12-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tab134suki.github.io/background/gallery/MC/index.html</loc>
+    
+    <lastmod>2022-12-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tab134suki.github.io/time/index.html</loc>
     
     <lastmod>2022-12-22</lastmod>
@@ -173,6 +191,13 @@
 
   
   <url>
+    <loc>https://tab134suki.github.io/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <lastmod>2022-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tab134suki.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2022-12-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -193,14 +218,14 @@
     <priority>0.2</priority>
   </url>
   
+
+  
   <url>
-    <loc>https://tab134suki.github.io/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <loc>https://tab134suki.github.io/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2022-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
-  
-
   
   <url>
     <loc>https://tab134suki.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
@@ -218,13 +243,6 @@
   
   <url>
     <loc>https://tab134suki.github.io/categories/%E5%8E%9F%E7%A5%9E/</loc>
-    <lastmod>2022-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tab134suki.github.io/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2022-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
