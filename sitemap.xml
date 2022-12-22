@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tab134suki.github.io/background/index.html</loc>
+    
+    <lastmod>2022-12-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tab134suki.github.io/time/index.html</loc>
     
     <lastmod>2022-12-22</lastmod>
@@ -57,15 +66,6 @@
   
   <url>
     <loc>https://tab134suki.github.io/posts/d7c0/</loc>
-    
-    <lastmod>2022-12-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tab134suki.github.io/bangumis/index.html</loc>
     
     <lastmod>2022-12-20</lastmod>
     
@@ -180,13 +180,6 @@
   </url>
   
   <url>
-    <loc>https://tab134suki.github.io/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
-    <lastmod>2022-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tab134suki.github.io/tags/%E4%B8%8B%E8%BD%BD/</loc>
     <lastmod>2022-12-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -195,6 +188,13 @@
   
   <url>
     <loc>https://tab134suki.github.io/tags/%E5%8E%9F%E7%A5%9E/</loc>
+    <lastmod>2022-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tab134suki.github.io/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2022-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -210,13 +210,6 @@
   </url>
   
   <url>
-    <loc>https://tab134suki.github.io/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
-    <lastmod>2022-12-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tab134suki.github.io/categories/%E4%B8%8B%E8%BD%BD/</loc>
     <lastmod>2022-12-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -225,6 +218,13 @@
   
   <url>
     <loc>https://tab134suki.github.io/categories/%E5%8E%9F%E7%A5%9E/</loc>
+    <lastmod>2022-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tab134suki.github.io/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2022-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
