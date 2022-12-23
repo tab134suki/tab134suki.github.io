@@ -151,11 +151,11 @@ var titleTime;
 document.addEventListener("visibilitychange", function () {
   if (document.hidden) {
     //离开当前页面时标签显示内容
-    document.title = "((٩(//̀Д/́/)۶))你干嘛";
+    document.title = "((٩(//̀Д/́/)۶))你干嘛|";
     clearTimeout(titleTime);
   } else {
     //返回当前页面时标签显示内容
-    document.title = "o(>ω<)o欢迎回来" + OriginTitile;
+    document.title = "o(>ω<)o欢迎回来|" + OriginTitile;
     //两秒后变回正常标题
     titleTime = setTimeout(function () {
       document.title = OriginTitile;
@@ -163,4 +163,6 @@ document.addEventListener("visibilitychange", function () {
   }
 });
 
-
+if(window.location.href == 'http://localhost:4000/'||window.location.href == 'https://tab134suki.github.io/'){
+    Snackbar.show({ actionText: '关闭本弹窗',text: '欢迎来到丨咬一口激动的鱼丨的官方网站！',backgroundColor: '#01f0ef',actionTextColor: '#0df016',pos: 'top-center',duration: '7000' });
+  }
