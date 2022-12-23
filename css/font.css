@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3785432 */
-  src: url('//at.alicdn.com/t/c/font_3785432_naszww8t4s.woff2?t=1671683767372') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3785432_naszww8t4s.woff?t=1671683767372') format('woff'),
-       url('//at.alicdn.com/t/c/font_3785432_naszww8t4s.ttf?t=1671683767372') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3785432_vjg8vtr8m7d.woff2?t=1671802084825') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3785432_vjg8vtr8m7d.woff?t=1671802084825') format('woff'),
+       url('//at.alicdn.com/t/c/font_3785432_vjg8vtr8m7d.ttf?t=1671802084825') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-suiji:before {
+  content: "\e7b8";
+}
+
+.icon-fanti:before {
+  content: "\e6d8";
 }
 
 .icon-charutupian:before {
