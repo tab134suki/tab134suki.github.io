@@ -166,3 +166,6 @@ document.addEventListener("visibilitychange", function () {
 if(window.location.href == 'http://localhost:4000/'||window.location.href == 'https://tab134suki.github.io/'){
     Snackbar.show({ actionText: '关闭本弹窗',text: '欢迎来到丨咬一口激动的鱼丨的官方网站！',backgroundColor: '#01f0ef',actionTextColor: '#0df016',pos: 'top-center',duration: '7000' });
   }
+if(window.location.href == 'http://localhost:4000/about'||window.location.href == 'https://tab134suki.github.io/about'){
+    Snackbar.show({ actionText: '关闭本弹窗',text: '可以动一动你们的小手给我一键三连吗？',backgroundColor: '#01f0ef',actionTextColor: '#0df016',pos: 'top-center',duration: '7000' });
+  }
