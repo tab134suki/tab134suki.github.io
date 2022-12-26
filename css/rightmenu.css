@@ -57,3 +57,24 @@
     display: none;
 }
 
+
+@font-face{
+    font-family: 'A';
+    font-display: swap;
+    src: url('/font/1.ttf') format("truetype");
+}
+
+body {
+    font-family: 'A';
+}
+
+
+@font-face{
+    font-family: 'B';
+    font-display: swap;
+    src: url('/font/2.ttf') format("truetype");
+}
+
+body {
+    font-family: 'B';
+}
