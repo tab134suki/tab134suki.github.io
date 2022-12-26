@@ -8,7 +8,7 @@ if (document.body.clientWidth > 992) {
         var ScrollTop = $(window).scrollTop();
         /* 可滚动的高度 */
         var S_V = DocH - ViewH;
-        var Band_H = ScrollTop / (DocH - ViewH) * 80;
+        var Band_H = ScrollTop / (DocH - ViewH) * 100;
         return {
             ViewH: ViewH,
             DocH: DocH,
@@ -34,7 +34,7 @@ if (document.body.clientWidth > 992) {
                 borderRadius: 5 + 'px',
                 right: 60 + 'px',
                 nekoImg: "https://www.z4a.net/images/2022/12/19/369704cabfde30abb.png",
-                hoverMsg: "你干嘛~",
+                hoverMsg: "喵喵喵~",
                 color: "#07cb7c",
                 during: 500,
                 blog_body: "body",
@@ -119,7 +119,7 @@ if (document.body.clientWidth > 992) {
     $(document).ready(function () {
         //部分自定义
         $("#myscoll").nekoScroll({
-            bgcolor: 'rgb(7 255 124 / .5)', //背景颜色，没有绳子背景图片时有效
+            bgcolor: 'rgb(0 0 0 / .5)', //背景颜色，没有绳子背景图片时有效
             borderRadius: '2em',
             zoom: 0.9
         }
@@ -144,6 +144,7 @@ if (document.body.clientWidth > 992) {
         */
     })
 }
+
 
 function doStuff() {
     var flag=0;
@@ -204,12 +205,6 @@ doStuff();
 
 
 
-
-作者: Ariasaka
-链接: https://yisous.xyz/posts/614f1131/
-来源: Ariasakaの小窝
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
 //动态标题
 var OriginTitile = document.title;
 var titleTime;
@@ -239,3 +234,7 @@ if(window.location.href == 'http://localhost:4000/about/'||window.location.href 
 if(window.location.href == 'http://localhost:4000/zzq/'||window.location.href == 'https://tab134suki.github.io/zzq'){
     Snackbar.show({ actionText: '关闭本弹窗',text: '合理消费享受健康人生',backgroundColor: '#01f0ef',actionTextColor: '#0df016',pos: 'top-center',duration: '7000' });
   }
+
+
+
+

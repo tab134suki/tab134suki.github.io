@@ -8,7 +8,7 @@ function setMask(){//设置遮罩层
     mask.className = "rmMask";
     mask.style.width = window.innerWidth + 'px';
     mask.style.height = window.innerHeight + 'px';
-    mask.style.background = '#fff';
+    mask.style.background = '#1ffb97';
     mask.style.opacity = '.0';
     mask.style.position = 'fixed';
     mask.style.top = '0';
@@ -99,7 +99,7 @@ rmf.copyWordsLink = function () {
     document.body.removeChild(txa);
     Snackbar.show({
         text: '链接复制成功！快去分享吧！',
-        pos: 'top-right',
+        pos: 'top-center',
         showAction: false
     });
 }
@@ -125,7 +125,7 @@ rmf.copySelect = function () {
     document.execCommand('Copy', false, null);
     Snackbar.show({
         text: '已复制，请注明原作者哦！',
-        pos: 'top-right',
+        pos: 'top-center',
         showAction: false
 	});
 }

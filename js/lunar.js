@@ -1069,7 +1069,3 @@ var lunarInfo = [0x04bd8, 0x04ae0, 0x0a570, 0x054d5, 0x0d260, 0x0d950, 0x16554, 
       }
 
     }
-  /*
-  版权声明：本文为CSDN博主「AILIHEIHEI」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-  原文链接：https://blog.csdn.net/qq_42780323/article/details/107202338
-  */
