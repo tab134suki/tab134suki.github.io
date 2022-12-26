@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tab134suki.github.io/posts/hexo2/</loc>
+    
+    <lastmod>2022-12-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tab134suki.github.io/posts/hexo1/</loc>
     
     <lastmod>2022-12-26</lastmod>
@@ -200,6 +209,13 @@
 
   
   <url>
+    <loc>https://tab134suki.github.io/tags/Butterfly/</loc>
+    <lastmod>2022-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tab134suki.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2022-12-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -227,14 +243,14 @@
     <priority>0.2</priority>
   </url>
   
+
+  
   <url>
-    <loc>https://tab134suki.github.io/tags/Butterfly/</loc>
+    <loc>https://tab134suki.github.io/categories/Butterfly/</loc>
     <lastmod>2022-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
-  
-
   
   <url>
     <loc>https://tab134suki.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
@@ -259,13 +275,6 @@
   
   <url>
     <loc>https://tab134suki.github.io/categories/%E5%8E%9F%E7%A5%9E/</loc>
-    <lastmod>2022-12-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tab134suki.github.io/categories/Butterfly/</loc>
     <lastmod>2022-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
