@@ -425,6 +425,13 @@ if(m==7&&dd==5){//生日
         sessionStorage.setItem("isPopupWindow","1");
     }
 }
+if(m==2&&dd==12){//生日
+    console.log("激鱼B站"+(y-2020).toString()+"岁生日快乐");
+    if(sessionStorage.getItem("isPopupWindow")!="1"){
+        Swal.fire("激鱼B站"+(y-2020).toString()+"岁生日快乐");
+        sessionStorage.setItem("isPopupWindow","1");
+    }
+}
 
 if(m==5&&dd==4){//青年节
     console.log("为有思想政治觉悟，拥护中国共产党，追求无产阶级、共产主义、马克思主义的青年们致敬！");
