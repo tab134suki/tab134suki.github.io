@@ -146,6 +146,8 @@ if (document.body.clientWidth > 992) {
 }
 
 
+
+
 function doStuff() {
     var flag=0;
     try{
