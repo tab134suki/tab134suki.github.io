@@ -6,7 +6,7 @@
   <link href="https://tab134suki.github.io/atom.xml" rel="self"/>
   
   <link href="https://tab134suki.github.io/"/>
-  <updated>2023-01-07T04:22:01.177Z</updated>
+  <updated>2023-01-07T07:13:41.034Z</updated>
   <id>https://tab134suki.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网站数据统计</title>
+    <link href="https://tab134suki.github.io/posts/sx2023/"/>
+    <id>https://tab134suki.github.io/posts/sx2023/</id>
+    <published>2023-01-07T07:04:21.887Z</published>
+    <updated>2023-01-07T07:13:41.034Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="日常" scheme="https://tab134suki.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="网站" scheme="https://tab134suki.github.io/tags/%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
   
   <entry>
     <title>博客有感.txt</title>
