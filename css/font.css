@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3785432 */
-  src: url('//at.alicdn.com/t/c/font_3785432_cowju0u9p0s.woff2?t=1673075929033') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3785432_cowju0u9p0s.woff?t=1673075929033') format('woff'),
-       url('//at.alicdn.com/t/c/font_3785432_cowju0u9p0s.ttf?t=1673075929033') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3785432_5n1rb4z9u7o.woff2?t=1673157614480') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3785432_5n1rb4z9u7o.woff?t=1673157614480') format('woff'),
+       url('//at.alicdn.com/t/c/font_3785432_5n1rb4z9u7o.ttf?t=1673157614480') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tuite:before {
+  content: "\e652";
 }
 
 .icon-zhexiantu:before {
