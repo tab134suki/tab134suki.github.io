@@ -34,8 +34,8 @@ if (document.body.clientWidth > 992) {
                 borderRadius: 5 + 'px',
                 right: 60 + 'px',
                 nekoImg: "https://www.z4a.net/images/2022/12/19/369704cabfde30abb.png",
-                hoverMsg: "喵喵喵~",
-                color: "#07cb7c",
+                hoverMsg: "你干嘛~",
+                color: "#0aedcf",
                 during: 500,
                 blog_body: "body",
             };
@@ -119,7 +119,7 @@ if (document.body.clientWidth > 992) {
     $(document).ready(function () {
         //部分自定义
         $("#myscoll").nekoScroll({
-            bgcolor: 'rgb(0 0 0 / .5)', //背景颜色，没有绳子背景图片时有效
+            bgcolor: 'rgb(10 237 115 / .5)', //背景颜色，没有绳子背景图片时有效
             borderRadius: '2em',
             zoom: 0.9
         }
