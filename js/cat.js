@@ -8,7 +8,7 @@ if (document.body.clientWidth > 992) {
         var ScrollTop = $(window).scrollTop();
         /* 可滚动的高度 */
         var S_V = DocH - ViewH;
-        var Band_H = ScrollTop / (DocH - ViewH) * 100;
+        var Band_H = ScrollTop / (DocH - ViewH) * 78;
         return {
             ViewH: ViewH,
             DocH: DocH,
