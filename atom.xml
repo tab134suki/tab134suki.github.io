@@ -6,7 +6,7 @@
   <link href="https://tab134suki.github.io/atom.xml" rel="self"/>
   
   <link href="https://tab134suki.github.io/"/>
-  <updated>2023-01-07T09:58:31.193Z</updated>
+  <updated>2023-01-10T07:30:23.950Z</updated>
   <id>https://tab134suki.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>网站数据统计</title>
-    <link href="https://tab134suki.github.io/posts/sx2023/"/>
-    <id>https://tab134suki.github.io/posts/sx2023/</id>
+    <title>博客有感1.txt</title>
+    <link href="https://tab134suki.github.io/posts/BK02/"/>
+    <id>https://tab134suki.github.io/posts/BK02/</id>
     <published>2023-01-07T07:04:21.887Z</published>
-    <updated>2023-01-07T09:58:31.193Z</updated>
+    <updated>2023-01-10T07:30:23.950Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>2023年1月10日，我在阿里云申领了一个域名。<br>tabotef134.top<br>目前没有服务器，也没法备案。<br>我找到了为什么网站会卡卡的。就是原来的“两个小人”<br>现在应该可以跑到30FPS-60FPS了<br>明天我就要迎接期末考试了。<br>如果可以的话，我会抽里面的几道题放在我的下一篇文章里。<br>但愿我不要挂。</p><p>新年就要到了，我在这里表示“海灯节”<br>加油吧，骚年！</p><p>背景取自<a href="https://www.bilibili.com/video/BV1mg411W7w2/">BV1mg411W7w2</a>（UP：愉悦的hehe11）</p>]]></content>
     
     
       
@@ -36,18 +36,18 @@
     <category term="日常" scheme="https://tab134suki.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="网站" scheme="https://tab134suki.github.io/tags/%E7%BD%91%E7%AB%99/"/>
+    <category term="日常" scheme="https://tab134suki.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
-    <title>博客有感.txt</title>
-    <link href="https://tab134suki.github.io/posts/2aff/"/>
-    <id>https://tab134suki.github.io/posts/2aff/</id>
+    <title>博客有感1.txt</title>
+    <link href="https://tab134suki.github.io/posts/BK01/"/>
+    <id>https://tab134suki.github.io/posts/BK01/</id>
     <published>2023-01-06T02:53:13.756Z</published>
-    <updated>2023-01-07T04:22:01.177Z</updated>
+    <updated>2023-01-10T07:24:03.407Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一开始做网站是看到其他人都有个网站，于是心中一热，就像自己建一个像样的网站<br>但出于技术不行（当时正在上初二），又因为没有RMB，所以只能凑合凑合用上了一些不花钱的网站来做<br>2021年3月份我看上了“上线了”这个网站。这个网站没有广告，基本免费。虽然有些功能还是要消费一波，不过基本够用了。<br>但实在是没有什么美观感，就又换了个网站“WordPress”，这个可食用的内容要比上线了要多，而且和上线了一样，0基础也是可以用的。<br>出于美观原因，音频限制，还有这个网站建立在国外，访问图片的时候会出现一些问题。就换到了现在这个网站。</p><p>目前这个网站出现的问题<br>1.我加的插件太多，网站卡卡的<br>2.使用的是github托管，加载很慢<br>3.文章每次更新需要hexo三件套，比较麻烦<br>所以我决定等到我上大学了，就给他绑个域名。</p><p>这个网站搭建起来较为费劲，新手不建议尝试（指的是0基础）。对电脑了解的差不多也勉强可以搭建一个出来。</p><p>现在我用的是hexo-butterfly，整体感觉不戳。当然，现在有许多免费的也可以搭建，这里就不多说了</p><p>2023年开始，这个网站应该就不会在添加一些花里花哨的东西了，毕竟，还是要以事业为主啊！</p><p>那么，在这里，我祝大家，新的一年，快快乐乐，幸福，天天吃鸡！！！</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一开始做网站是看到其他人都有个网站，于是心中一热，就像自己建一个像样的网站<br>但出于技术不行（当时正在上初二），又因为没有RMB，所以只能凑合凑合用上了一些不花钱的网站来做<br>2021年3月份我看上了“上线了”这个网站。这个网站没有广告，基本免费。虽然有些功能还是要消费一波，不过基本够用了。<br>但实在是没有什么美观感，就又换了个网站“WordPress”，这个可食用的内容要比上线了要多，而且和上线了一样，0基础也是可以用的。<br>出于美观原因，音频限制，还有这个网站建立在国外，访问图片的时候会出现一些问题。就换到了现在这个网站。<br>目前这个网站出现的问题<br>1.我加的插件太多，网站卡卡的<br>2.使用的是github托管，加载很慢<br>3.文章每次更新需要hexo三件套，比较麻烦<br>所以我决定等到我上大学了，就给他绑个域名。<br>这个网站搭建起来较为费劲，新手不建议尝试（指的是0基础）。对电脑了解的差不多也勉强可以搭建一个出来。<br>现在我用的是hexo-butterfly，整体感觉不戳。当然，现在有许多免费的也可以搭建，这里就不多说了<br>2023年开始，这个网站应该就不会在添加一些花里花哨的东西了，毕竟，还是要以事业为主啊！<br>那么，在这里，我祝大家，新的一年，快快乐乐，幸福，天天吃鸡！！！</p>]]></content>
     
     
       

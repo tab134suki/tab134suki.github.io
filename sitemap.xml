@@ -4,7 +4,25 @@
   <url>
     <loc>https://tab134suki.github.io/time/index.html</loc>
     
-    <lastmod>2023-01-09</lastmod>
+    <lastmod>2023-01-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tab134suki.github.io/posts/BK02/</loc>
+    
+    <lastmod>2023-01-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tab134suki.github.io/posts/BK01/</loc>
+    
+    <lastmod>2023-01-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -23,15 +41,6 @@
     <loc>https://tab134suki.github.io/web/index.html</loc>
     
     <lastmod>2023-01-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tab134suki.github.io/posts/sx2023/</loc>
-    
-    <lastmod>2023-01-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -84,15 +93,6 @@
   
   <url>
     <loc>https://tab134suki.github.io/posts/cc7e52cb/</loc>
-    
-    <lastmod>2023-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tab134suki.github.io/posts/2aff/</loc>
     
     <lastmod>2023-01-07</lastmod>
     
@@ -270,13 +270,6 @@
   </url>
   
   <url>
-    <loc>https://tab134suki.github.io/tags/Butterfly/</loc>
-    <lastmod>2023-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tab134suki.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2023-01-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -285,6 +278,13 @@
   
   <url>
     <loc>https://tab134suki.github.io/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <lastmod>2023-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tab134suki.github.io/tags/Butterfly/</loc>
     <lastmod>2023-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -312,13 +312,6 @@
   </url>
   
   <url>
-    <loc>https://tab134suki.github.io/tags/%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2023-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tab134suki.github.io/tags/%E5%8A%A0%E5%AF%86%E6%96%87%E7%AB%A0tag/</loc>
     <lastmod>2023-01-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -335,14 +328,14 @@
   </url>
   
   <url>
-    <loc>https://tab134suki.github.io/categories/Butterfly/</loc>
+    <loc>https://tab134suki.github.io/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2023-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tab134suki.github.io/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <loc>https://tab134suki.github.io/categories/Butterfly/</loc>
     <lastmod>2023-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
