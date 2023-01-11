@@ -35,7 +35,8 @@ if (document.body.clientWidth > 992) {
                 right: 60 + 'px',
                 nekoImg: "https://www.z4a.net/images/2022/12/19/369704cabfde30abb.png",
                 hoverMsg: "你干嘛~",
-                color: "#0aedcf",
+                color: "#15df6c",
+				fontFamily: B
                 during: 500,
                 blog_body: "body",
             };
@@ -213,11 +214,11 @@ var titleTime;
 document.addEventListener("visibilitychange", function () {
   if (document.hidden) {
     //离开当前页面时标签显示内容
-    document.title = "((٩(//̀Д/́/)۶))你干嘛|";
+    document.title = "((٩(//̀Д/́/)۶))你干嘛 ";
     clearTimeout(titleTime);
   } else {
     //返回当前页面时标签显示内容
-    document.title = "o(>ω<)o欢迎回来|" + OriginTitile;
+    document.title = "o(>ω<)o欢迎回来 " + OriginTitile;
     //两秒后变回正常标题
     titleTime = setTimeout(function () {
       document.title = OriginTitile;
