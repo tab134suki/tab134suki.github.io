@@ -1378,7 +1378,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: A;
+  font-family: B;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1509,7 +1509,7 @@ a:hover {
 #site-name,
 #aside-content .author-info__name,
 #aside-content .author-info__description {
-  font-family: B;
+  font-family: A;
 }
 .is-center {
   text-align: center;
@@ -1676,7 +1676,7 @@ figure.highlight pre .javascript .function {
 }
 #article-container pre,
 #article-container code {
-  font-size: 17px;
+  font-size: 15px;
   font-family: A !important;
 }
 #article-container code {
@@ -1704,7 +1704,7 @@ figure.highlight pre .javascript .function {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 6px 0 2px 14px;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1736,7 +1736,7 @@ figure.highlight pre .javascript .function {
   height: 2.15em;
   background: var(--hltools-bg);
   color: var(--hltools-color);
-  font-size: 17px;
+  font-size: 15px;
 }
 #article-container .highlight-tools.closed ~ * {
   display: none;
@@ -1948,7 +1948,7 @@ figure.highlight pre .javascript .function {
   height: 100%;
   vertical-align: top;
   text-align: center;
-  font-family: B;
+  font-family: A;
 }
 @media screen and (max-width: 768px) {
   .error404 #error-wrap .error-content .error-info {
