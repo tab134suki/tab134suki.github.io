@@ -79,12 +79,4 @@ body {
     font-family: 'B';
 }
 
-@font-face{
-    font-family: 'C';
-    font-display: swap;
-    src: url('/font/3.woff') format("WOFF");
-}
-
-body {
-    font-family: 'C';
-}
+\
