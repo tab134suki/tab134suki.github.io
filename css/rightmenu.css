@@ -61,7 +61,7 @@
 @font-face{
     font-family: 'A';
     font-display: swap;
-    src: url('/font/1.ttf') format("truetype");
+    src: url('/font/1.woff') format("WOFF");
 }
 
 body {
@@ -72,7 +72,7 @@ body {
 @font-face{
     font-family: 'B';
     font-display: swap;
-    src: url('/font/2.ttf') format("truetype");
+    src: url('/font/2.woff') format("WOFF");
 }
 
 body {
