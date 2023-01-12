@@ -1553,10 +1553,9 @@
 			{
 				"text": "Genshin-9",
 				"icon": "<img src='https://twikoo-magic.oss-cn-hangzhou.aliyuncs.com/Genshin/9.jpg'>"
-			}
-		]
-	}
-
+      }
+    ]
+  },
 
 
 
@@ -1741,5 +1740,5 @@
         "icon": "<img src='https://twikoo-magic.oss-cn-hangzhou.aliyuncs.com/bilibili_tv_gif/鼓掌.gif'>"
       }
     ]
-  },
+  }
 }
