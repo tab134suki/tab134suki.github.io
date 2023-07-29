@@ -53,3 +53,12 @@
     padding: 4px;
     border-radius: 4px;
   }
+
+  @font-face {
+    /* 为载入的字体取名字(随意) */
+    font-family: 'YSHST';	
+    font-display: swap;
+  src: url('/fonts/2.woff2') format("WOFF2");  
+}
+
+font-family: YSHST;
