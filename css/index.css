@@ -12279,6 +12279,7 @@ blockquote {
 }
 #article-container iframe {
   margin: 0 0 20px;
+  border-radius: 12px;
 }
 #article-container kbd {
   margin: 0 3px;
