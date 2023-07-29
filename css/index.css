@@ -7944,7 +7944,8 @@ h1.page-title + .tag-cloud-list {
   display: box;
   display: flex;
 }
-#aside-content .card-widget .card-info-social-icons .social-icon i {
+#aside-content .card-widget .card-info-social-icons .social-icon i,
+#aside-content .card-widget .card-info-social-icons .social-icon svg {
   background: var(--anzhiyu-white-op);
   color: var(--anzhiyu-white);
   font-size: 1rem;
@@ -7976,7 +7977,8 @@ h1.page-title + .tag-cloud-list {
   padding: 8px;
   border-radius: 32px;
 }
-#aside-content .card-widget .card-info-social-icons .social-icon i:hover {
+#aside-content .card-widget .card-info-social-icons .social-icon i:hover,
+#aside-content .card-widget .card-info-social-icons .social-icon svg:hover {
   background: var(--anzhiyu-secondbg);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -12309,6 +12311,16 @@ blockquote {
 }
 #article-container h1 .headerlink::before {
   font-size: 2rem;
+}
+#article-container > :first-child:is(h2) {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+#article-container h2 {
+  border-top: 1px dashed var(--anzhiyu-theme-op);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 #article-container h2 .headerlink {
   float: right;
