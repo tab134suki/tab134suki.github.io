@@ -4846,7 +4846,7 @@ body[data-type="about"] #web_bg {
 }
 @media screen and (min-width: 2000px) {
   .layout {
-    max-width: 1500px;
+    max-width: 1700px;
   }
 }
 .layout > div:first-child:not(.recent-posts) {
@@ -12757,6 +12757,11 @@ blockquote {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  #post .post-copyright .post-copyright__notice .post-copyright-info {
+    -webkit-line-clamp: 2;
+  }
 }
 #post .post-copyright .post-copyright__notice .post-copyright-info a:hover {
   color: var(--anzhiyu-main);
