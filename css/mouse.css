@@ -1,0 +1,9 @@
+body {
+    cursor:url(https://jiyu134.top/cursor/正常选择.cur),
+          default;
+  }
+  a,
+  img {
+    cursor:url(https://jiyu134.top/cursor/链接选择.cur),
+          pointer;
+  }
