@@ -54,15 +54,7 @@
     border-radius: 4px;
   }
 
-  @font-face {
-    /* 为载入的字体取名字(随意) */
-    font-family: '荆南麦园体';	
-    font-display: swap;
-  src: url('https://jiyu134.top/fonts/荆南麦园体.woff2') format("woff2"),
-      url('https://jiyu134.top/fonts/荆南麦园体.woff2') format("woff2"); 
-}
 
-font-family: 荆南麦园体;
 
 /* 鼠标样式 */
 #cursor {
@@ -70,7 +62,7 @@ font-family: 荆南麦园体;
   width: 16px;
   height: 16px;
   /* 这里改变跟随的底色 */
-  background: var(--theme-color);
+  background: rgb(1, 253, 174)
   border-radius: 8px;
   opacity: 0.25;
   z-index: 10086;
