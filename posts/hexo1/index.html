@@ -312,7 +312,7 @@ queueMicrotask(() => {
     "已上线",
     dnum,
     "天",
-    "©2022 By 安知鱼 V1.5.1",
+    "©2022 By 安知鱼 V1.5.2",
   ];
   const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
 
@@ -718,7 +718,7 @@ document.addEventListener('visibilitychange', function () {
 
       entries.forEach(entry => {
         if (postComment && commentBarrage && document.body.clientWidth > 768) {
-          commentBarrage.style.bottom = entry.isIntersecting ? "-200px" : "0";
+          commentBarrage.style.bottom = entry.isIntersecting ? `-${commentBarrageConfig.maxBarrage * 200}px` : "0";
         }
       });
     };
