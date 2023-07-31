@@ -58,7 +58,8 @@
     /* 为载入的字体取名字(随意) */
     font-family: '荆南麦园体';	
     font-display: swap;
-  src: url('https://jiyu134.top/fonts/荆南麦园体.woff2') format("woff2");  
+  src: url('https://jiyu134.top/fonts/荆南麦园体.woff2') format("woff2"),
+      url('https://jiyu134.top/fonts/荆南麦园体.woff2') format("woff2"); 
 }
 
 font-family: 荆南麦园体;
