@@ -5909,6 +5909,12 @@ body[data-type="link"] #page .page-title {
   display: none;
   color: var(--anzhiyu-secondtext);
   font-size: 0.5rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
   position: fixed;
   top: 245px;
   left: 32px;
@@ -9849,7 +9855,7 @@ h1.page-title + .tag-cloud-list {
   margin-right: 4px;
 }
 #post-info #post-meta .post-meta-label {
-  margin-right: 4px;
+  display: none;
 }
 #post-info #post-meta .post-meta-categories a:not([data-fancybox="gallery"]) {
   font-weight: 500;
