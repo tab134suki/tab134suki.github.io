@@ -6,7 +6,7 @@
   <link href="https://jiyu134.top/atom.xml" rel="self"/>
   
   <link href="https://jiyu134.top/"/>
-  <updated>2023-08-06T03:16:33.775Z</updated>
+  <updated>2023-08-06T12:20:09.218Z</updated>
   <id>https://jiyu134.top/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://jiyu134.top/posts/0/"/>
+    <id>https://jiyu134.top/posts/0/</id>
+    <published>2023-08-06T12:20:09.218Z</published>
+    <updated>2023-08-06T12:20:09.218Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>兽言爪道-第二十章-不要过来呀</title>
@@ -713,28 +726,6 @@
     
     
     <category term="科技" scheme="https://jiyu134.top/tags/%E7%A7%91%E6%8A%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何为您的博客安装完全免费的SSL证书</title>
-    <link href="https://jiyu134.top/posts/bf1b/"/>
-    <id>https://jiyu134.top/posts/bf1b/</id>
-    <published>2023-03-02T04:46:12.927Z</published>
-    <updated>2023-03-02T04:46:12.927Z</updated>
-    
-    <content type="html"><![CDATA[<div class="tip "><p>温馨提示：</p><p><strong>此方法本博客不适用，但不代表不可以</strong></p><p>1.本教程基于阿里云，腾讯云咱就不知道了<br>2.此过程不需要花钱<br>3.SSL证书有效期通常只有一年，需要在有效期内及时续费<br>4.请确保你已经有一个属于自己的一级域名（因为只是二级域名的话你根本不需要用到SSL证书）<br>5.手机也可以操作的哦！</p></div><p>#出发前说明<br>为什么我会选择Netlify呢？<br>如果你是使用的Github Page，你是绑定不了自己的免费证书的（怎么获取见下方）<br>还有用Netlify更快（相对于）<br>#Netlify<br>1.进入网站<a href="https://www.netlify.com/">！点我进入!</a><br>2.点击屏幕中间的蓝色方块“Get started for free”，然后点击黑色方块“github”<br>3.关联进入后点击“New site from Git”，然后选择网站源码托管的代码仓库类型，选择GitHub，会进入Github的认证授权页面，点击Authorize Netlify by Netlify<br>4.然后选择你的网站的仓库，然后往下巴拉，找到“Deploy site”，就行了<br>5，部署完成后，Netlify会自动生成一个随机的二级域名xxx.netlify.com，我们可以修改为自定义的二级域名，点击Site Settings<br>#自己的域名绑定<br>1.如果你想绑定自己的域名，需要先在域名管理系统里新建解析，将域名CNAME指向到你的netlify二级域名。<br>其中，主机记录如果你像我一样是放在主页，你就搞两个，“@”“www”<br>记录值就是你所修改的二级域名。（不修改也行）<br>2.进入Netlify管理后台，Domain management -&gt; Domains，点击Add domain alias，填入你的自定义域名<br>如果显示错误，那就多试几遍<br>#购买免费SSL证书<br>1.进入网站<a href="https://yundun.console.aliyun.com/?p=cas#/certExtend/free">！点我进入!</a><br>没注册的注册一下<br>2.点击立即购买，产品选择免费证书，购买数量20，不需要其他服务，勾选服务协议，然后你就获得每年20个证书的资格。<br>3.返回点击立即购买右边的创建证书，就会生成“DigiCert 免费版 SSL”的证书，但现在还是未签发状态。<br>4.点击“证书申请”，其中证书绑定域名为你的域名，域名验证方式为自动DNS验证，联系人就点击新建联系人，按照上面有的就填写就行。所在地你懂得。CSR生成方式为系统生成即可。然后点击提交申请<br>5.按照要求添加DNS解析记录。<br>6.等待审核，审核通过了就会发个短信<br>然后进行下一步。<br>#安装证书<br>1.刷新一下，显示已签发你就成功了80%，然后点击下载<br>2.你需要下载正确的类型<br>其中，服务器类型为Nginx，证书格式pem&#x2F;key<br>点击下载<br>3.下载完成后用Notepad++打开（当然普通的记事本也能打开），会有<br>“BEGIN CERTIFICATE”和“BEGIN RSA PRIVATE KEY”开头的两个文件。<br>4.回到netlify，点击你的域名，找到“site settings”,”Domain management<br>往下滑找到HTTPS<br>自己用翻译软件翻一下，点击按钮。<br>5.有三个空，从上到下分别是“证书”“私钥”“中间证书”<br>其中，证书填写pem格式也就是BEGIN CERTIFICATE开头的，直接复制进去<br>私钥是BEGIN RSA PRIVATE KEY开头的，直接复制进去<br>中间证书就是你的证书，直接复制第一个空就行。<br>如果报错渲染错了，没事，点请重试就行了。<br>这样你的证书就换好了！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;div class=&quot;tip &quot;&gt;&lt;p&gt;温馨提示：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;此方法本博客不适用，但不代表不可以&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1.本教程基于阿里云，腾讯云咱就不知道了&lt;br&gt;2.此过程不需要花钱&lt;br&gt;3.SSL证书有效期通常只有一年，需要在有效期内及时</summary>
-      
-    
-    
-    
     
   </entry>
   
