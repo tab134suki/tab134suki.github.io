@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jiyu134.top/posts/f3sg/</loc>
+    
+    <lastmod>2023-08-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jiyu134.top/posts/fy4s/</loc>
     
     <lastmod>2023-08-06</lastmod>
@@ -398,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/aboutme/index.html</loc>
+    <loc>https://jiyu134.top/about/index.html</loc>
     
     <lastmod>2023-01-23</lastmod>
     
@@ -407,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/about/index.html</loc>
+    <loc>https://jiyu134.top/aboutme/index.html</loc>
     
     <lastmod>2023-01-23</lastmod>
     
@@ -425,7 +434,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/posts/YJBG1/</loc>
+    <loc>https://jiyu134.top/posts/YJBG2/</loc>
     
     <lastmod>2023-01-22</lastmod>
     
@@ -434,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/posts/YJBG2/</loc>
+    <loc>https://jiyu134.top/posts/YJBG1/</loc>
     
     <lastmod>2023-01-22</lastmod>
     
@@ -619,13 +628,6 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jiyu134.top/tags/%E6%AF%8F%E5%B9%B4%E4%B8%80%E5%8D%A1/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -640,7 +642,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <loc>https://jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -655,6 +657,13 @@
   
   <url>
     <loc>https://jiyu134.top/tags/%E6%95%85%E4%BA%8B/</loc>
+    <lastmod>2023-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jiyu134.top/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -689,14 +698,14 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/tags/%E6%B4%BB%E5%8A%A8/</loc>
+    <loc>https://jiyu134.top/tags/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jiyu134.top/tags/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</loc>
+    <loc>https://jiyu134.top/tags/%E6%B4%BB%E5%8A%A8/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -719,13 +728,6 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jiyu134.top/categories/Butterfly/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -733,7 +735,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <loc>https://jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -748,6 +750,13 @@
   
   <url>
     <loc>https://jiyu134.top/categories/%E6%95%85%E4%BA%8B/</loc>
+    <lastmod>2023-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jiyu134.top/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -782,14 +791,14 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/categories/%E6%B4%BB%E5%8A%A8/</loc>
+    <loc>https://jiyu134.top/categories/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jiyu134.top/categories/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</loc>
+    <loc>https://jiyu134.top/categories/%E6%B4%BB%E5%8A%A8/</loc>
     <lastmod>2023-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

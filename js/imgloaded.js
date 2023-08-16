@@ -69,9 +69,9 @@ const executeLoad = (config, target) => {
 
 const config = {
   smallSrc: 'https://www.z4a.net/images/2023/06/21/-aa02237b46d3af12.png', // 小图链接 尽可能配置小于100k的图片
-  largeSrc: 'https://www.z4a.net/images/2023/06/21/-aa02237b46d3af12.png', // 大图链接 最终显示的图片
+  largeSrc: 'https://flyhouse.roocloud.top/2023/08/16/64dc5ca2a0d2d.jpg', // 大图链接 最终显示的图片
   mobileSmallSrc: 'https://www.z4a.net/images/2023/06/21/--cfefcc88c58fc8a6.png', // 手机端小图链接 尽可能配置小于100k的图片
-  mobileLargeSrc: 'https://www.z4a.net/images/2023/06/21/--cfefcc88c58fc8a6.png', // 手机端大图链接 最终显示的图片
+  mobileLargeSrc: 'https://flyhouse.roocloud.top/2023/08/16/64dc5ca2a0d2d.jpg', // 手机端大图链接 最终显示的图片
   enableRoutes: ['/'],
 };
 
