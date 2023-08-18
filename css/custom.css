@@ -37,8 +37,8 @@
 #fps {
     position: fixed;
     /* 指定位置 */
-    left: 10px;
-    bottom: 120px;
+    left: 25px;
+    bottom: 60px;
     z-index: 1919810;
   }
   [data-theme="light"] #fps {
