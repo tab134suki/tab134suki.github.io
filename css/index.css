@@ -1932,7 +1932,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: Menlo, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+  font-family: Microsoft JhengHei;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
