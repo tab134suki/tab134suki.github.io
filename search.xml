@@ -999,11 +999,11 @@
     
     
     <entry>
-      <title>博客有感2.txt</title>
-      <link href="/posts/BK02/"/>
-      <url>/posts/BK02/</url>
+      <title>博客有感1.txt</title>
+      <link href="/posts/BK01/"/>
+      <url>/posts/BK01/</url>
       
-        <content type="html"><![CDATA[<p>2023年1月10日，我在阿里云申领了一个域名。<br>tabotef134.top<br>目前没有服务器，也没法备案。<br>我找到了为什么网站会卡卡的。就是原来的“两个小人”<br>现在应该可以跑到30FPS-60FPS了<br>明天我就要迎接期末考试了。<br>如果可以的话，我会抽里面的几道题放在我的下一篇文章里。<br>但愿我不要挂。</p><p>新年就要到了，我在这里表示“海灯节”<br>加油吧，骚年！</p><p>背景取自<a href="https://www.bilibili.com/video/BV1mg411W7w2/">BV1mg411W7w2</a>（UP：愉悦的hehe11）</p>]]></content>
+        <content type="html"><![CDATA[<p>一开始做网站是看到其他人都有个网站，于是心中一热，就像自己建一个像样的网站<br>但出于技术不行（当时正在上初二），又因为没有RMB，所以只能凑合凑合用上了一些不花钱的网站来做<br>2021年3月份我看上了“上线了”这个网站。这个网站没有广告，基本免费。虽然有些功能还是要消费一波，不过基本够用了。<br>但实在是没有什么美观感，就又换了个网站“WordPress”，这个可食用的内容要比上线了要多，而且和上线了一样，0基础也是可以用的。<br>出于美观原因，音频限制，还有这个网站建立在国外，访问图片的时候会出现一些问题。就换到了现在这个网站。<br>目前这个网站出现的问题<br>1.我加的插件太多，网站卡卡的<br>2.使用的是github托管，加载很慢<br>3.文章每次更新需要hexo三件套，比较麻烦<br>所以我决定等到我上大学了，就给他绑个域名。<br>这个网站搭建起来较为费劲，新手不建议尝试（指的是0基础）。对电脑了解的差不多也勉强可以搭建一个出来。<br>现在我用的是hexo-butterfly，整体感觉不戳。当然，现在有许多免费的也可以搭建，这里就不多说了<br>2023年开始，这个网站应该就不会在添加一些花里花哨的东西了，毕竟，还是要以事业为主啊！<br>那么，在这里，我祝大家，新的一年，快快乐乐，幸福，天天吃鸡！！！</p>]]></content>
       
       
       <categories>
@@ -1024,11 +1024,11 @@
     
     
     <entry>
-      <title>博客有感1.txt</title>
-      <link href="/posts/BK01/"/>
-      <url>/posts/BK01/</url>
+      <title>博客有感2.txt</title>
+      <link href="/posts/BK02/"/>
+      <url>/posts/BK02/</url>
       
-        <content type="html"><![CDATA[<p>一开始做网站是看到其他人都有个网站，于是心中一热，就像自己建一个像样的网站<br>但出于技术不行（当时正在上初二），又因为没有RMB，所以只能凑合凑合用上了一些不花钱的网站来做<br>2021年3月份我看上了“上线了”这个网站。这个网站没有广告，基本免费。虽然有些功能还是要消费一波，不过基本够用了。<br>但实在是没有什么美观感，就又换了个网站“WordPress”，这个可食用的内容要比上线了要多，而且和上线了一样，0基础也是可以用的。<br>出于美观原因，音频限制，还有这个网站建立在国外，访问图片的时候会出现一些问题。就换到了现在这个网站。<br>目前这个网站出现的问题<br>1.我加的插件太多，网站卡卡的<br>2.使用的是github托管，加载很慢<br>3.文章每次更新需要hexo三件套，比较麻烦<br>所以我决定等到我上大学了，就给他绑个域名。<br>这个网站搭建起来较为费劲，新手不建议尝试（指的是0基础）。对电脑了解的差不多也勉强可以搭建一个出来。<br>现在我用的是hexo-butterfly，整体感觉不戳。当然，现在有许多免费的也可以搭建，这里就不多说了<br>2023年开始，这个网站应该就不会在添加一些花里花哨的东西了，毕竟，还是要以事业为主啊！<br>那么，在这里，我祝大家，新的一年，快快乐乐，幸福，天天吃鸡！！！</p>]]></content>
+        <content type="html"><![CDATA[<p>2023年1月10日，我在阿里云申领了一个域名。<br>tabotef134.top<br>目前没有服务器，也没法备案。<br>我找到了为什么网站会卡卡的。就是原来的“两个小人”<br>现在应该可以跑到30FPS-60FPS了<br>明天我就要迎接期末考试了。<br>如果可以的话，我会抽里面的几道题放在我的下一篇文章里。<br>但愿我不要挂。</p><p>新年就要到了，我在这里表示“海灯节”<br>加油吧，骚年！</p><p>背景取自<a href="https://www.bilibili.com/video/BV1mg411W7w2/">BV1mg411W7w2</a>（UP：愉悦的hehe11）</p>]]></content>
       
       
       <categories>
@@ -1068,31 +1068,6 @@
     
     
     <entry>
-      <title>“绘忆星辰”活动图片（纪念）</title>
-      <link href="/posts/18233bf1/"/>
-      <url>/posts/18233bf1/</url>
-      
-        <content type="html"><![CDATA[<div class="note warning flat"><p>温馨提示:可以点击图片放大哦！</p></div><div class="gallery">  <div class="fj-gallery page_img_lazyload  data" data-rowHeight="220" data-limit="10">    <span class="gallery-data">[{"url":"https://www.z4a.net/images/2022/12/20/1d1ff8a052c56334e.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/f451bd4df5aa62d107cefcfb3791330116645215237586709388356502674004.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/4fb4baa23eccf2b3fe597387087eff8016645211182105005093250911379028.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/c25077961289f461af31c8a42d9b005216645212517764762129740692277810.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/f017a7d9f269c976641bc56872d9219516645213843795437852403407875448.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/4fdd8bc991c0e3c2fcbda6f8aff4da5016645214391977501433869123727200.jpg","alt":""}]</span>  </div><button class="gallery-load-more" style="opacity:0">  <span>加载更多</span>  <i class="anzhiyufont anzhiyu-icon-arrow-down"></i>  </button></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日常 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 日常 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>/置顶/倒计时</title>
       <link href="/posts/cc7e52cb/"/>
       <url>/posts/cc7e52cb/</url>
@@ -1110,6 +1085,31 @@
         <tags>
             
             <tag> 倒计时 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>“绘忆星辰”活动图片（纪念）</title>
+      <link href="/posts/18233bf1/"/>
+      <url>/posts/18233bf1/</url>
+      
+        <content type="html"><![CDATA[<div class="note warning flat"><p>温馨提示:可以点击图片放大哦！</p></div><div class="gallery">  <div class="fj-gallery page_img_lazyload  data" data-rowHeight="220" data-limit="10">    <span class="gallery-data">[{"url":"https://www.z4a.net/images/2022/12/20/1d1ff8a052c56334e.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/f451bd4df5aa62d107cefcfb3791330116645215237586709388356502674004.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/4fb4baa23eccf2b3fe597387087eff8016645211182105005093250911379028.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/c25077961289f461af31c8a42d9b005216645212517764762129740692277810.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/f017a7d9f269c976641bc56872d9219516645213843795437852403407875448.jpg","alt":""},{"url":"https://www.z4a.net/images/2022/12/20/4fdd8bc991c0e3c2fcbda6f8aff4da5016645214391977501433869123727200.jpg","alt":""}]</span>  </div><button class="gallery-load-more" style="opacity:0">  <span>加载更多</span>  <i class="anzhiyufont anzhiyu-icon-arrow-down"></i>  </button></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常 </tag>
             
         </tags>
       
