@@ -38,17 +38,17 @@
     position: fixed;
     /* 指定位置 */
     left: 10px;
-    bottom: 60px;
+    bottom: 120px;
     z-index: 1919810;
   }
   [data-theme="light"] #fps {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(0, 255, 153, 0.568);
     backdrop-filter: var(--backdrop-filter);
     padding: 4px;
     border-radius: 4px;
   }
   [data-theme="dark"] #fps {
-    background-color: rgba(0, 0, 0, 0.72);
+    background-color: rgba(6, 155, 90, 0.438);
     backdrop-filter: var(--backdrop-filter);
     padding: 4px;
     border-radius: 4px;
