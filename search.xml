@@ -1068,31 +1068,6 @@
     
     
     <entry>
-      <title>/置顶/倒计时</title>
-      <link href="/posts/cc7e52cb/"/>
-      <url>/posts/cc7e52cb/</url>
-      
-        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2044458041&auto=1&height=66"></iframe> <span class='p green center h1'>距离2025年高考还有</span> <html> <head></head> <body>  <div>    <div>    <div class="text" style=" text-align:left;">      <span id="t_d">00</span>      <span id="t_h">00</span>      <span id="t_m">00</span>      <span id="t_s">00</span>     </div>     <script type="text/javascript">function getRTime(){var EndTime= new Date('2025/06/7 00:00:00'); //截止时间var NowTime = new Date();var t =EndTime.getTime() - NowTime.getTime();var d=Math.floor(t/1000/60/60/24);var h=Math.floor(t/1000/60/60%24);var m=Math.floor(t/1000/60%60);var s=Math.floor(t/1000%60);document.getElementById("t_d").innerHTML = d + " 天";document.getElementById("t_h").innerHTML = h + " 时";document.getElementById("t_m").innerHTML = m + " 分";document.getElementById("t_s").innerHTML = s + " 秒";}setInterval(getRTime,1000);</script>   </div>  </div> </body></html>UP主现在在上高中，所以安排一个高考倒计时不过分吧等到高中毕业，应该就会撤掉吧...会换成正计时...<img no-lazy class="inline" src="https://zhuye1.jiyu134.top/images/%E5%95%8A%E5%95%8A%E5%95%8A.jpg" style="height:1.5em"/> <span class='p green center h1'>爷已经苟活了</span><html lang="en"><head>  <meta charset="UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Document</title></head><body>  <div id="box1"></div>  <script>    function timingTime(){      let start = '2007-7-5 00:00:00'      let startTime = new Date(start).getTime()      let currentTime = new Date().getTime()      let difference = currentTime - startTime      let m =  Math.floor(difference / (1000))      let mm = m % 60  // 秒      let f = Math.floor(m / 60)      let ff = f % 60 // 分钟      let s = Math.floor(f/ 60) // 小时      let ss = s % 24      let day = Math.floor(s  / 24 ) // 天数      return day + "天" + ss + "时" + ff + "分" + mm +'秒'    }    setInterval(()=>{      document.getElementById('box1').innerHTML = timingTime()    },1000)  </script></body></html>]]></content>
-      
-      
-      <categories>
-          
-          <category> 倒计时 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 倒计时 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>“绘忆星辰”活动图片（纪念）</title>
       <link href="/posts/18233bf1/"/>
       <url>/posts/18233bf1/</url>
@@ -1110,6 +1085,31 @@
         <tags>
             
             <tag> 日常 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>/置顶/倒计时</title>
+      <link href="/posts/cc7e52cb/"/>
+      <url>/posts/cc7e52cb/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2044458041&auto=1&height=66"></iframe> <span class='p green center h1'>距离2025年高考还有</span> <html> <head></head> <body>  <div>    <div>    <div class="text" style=" text-align:left;">      <span id="t_d">00</span>      <span id="t_h">00</span>      <span id="t_m">00</span>      <span id="t_s">00</span>     </div>     <script type="text/javascript">function getRTime(){var EndTime= new Date('2025/06/7 00:00:00'); //截止时间var NowTime = new Date();var t =EndTime.getTime() - NowTime.getTime();var d=Math.floor(t/1000/60/60/24);var h=Math.floor(t/1000/60/60%24);var m=Math.floor(t/1000/60%60);var s=Math.floor(t/1000%60);document.getElementById("t_d").innerHTML = d + " 天";document.getElementById("t_h").innerHTML = h + " 时";document.getElementById("t_m").innerHTML = m + " 分";document.getElementById("t_s").innerHTML = s + " 秒";}setInterval(getRTime,1000);</script>   </div>  </div> </body></html>UP主现在在上高中，所以安排一个高考倒计时不过分吧等到高中毕业，应该就会撤掉吧...会换成正计时...<img no-lazy class="inline" src="https://zhuye1.jiyu134.top/images/%E5%95%8A%E5%95%8A%E5%95%8A.jpg" style="height:1.5em"/> <span class='p green center h1'>爷已经苟活了</span><html lang="en"><head>  <meta charset="UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Document</title></head><body>  <div id="box1"></div>  <script>    function timingTime(){      let start = '2007-7-5 00:00:00'      let startTime = new Date(start).getTime()      let currentTime = new Date().getTime()      let difference = currentTime - startTime      let m =  Math.floor(difference / (1000))      let mm = m % 60  // 秒      let f = Math.floor(m / 60)      let ff = f % 60 // 分钟      let s = Math.floor(f/ 60) // 小时      let ss = s % 24      let day = Math.floor(s  / 24 ) // 天数      return day + "天" + ss + "时" + ff + "分" + mm +'秒'    }    setInterval(()=>{      document.getElementById('box1').innerHTML = timingTime()    },1000)  </script></body></html>]]></content>
+      
+      
+      <categories>
+          
+          <category> 倒计时 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 倒计时 </tag>
             
         </tags>
       
