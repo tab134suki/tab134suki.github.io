@@ -470,7 +470,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/posts/YJBG2/</loc>
+    <loc>https://jiyu134.top/posts/YJBG1/</loc>
     
     <lastmod>2023-01-22</lastmod>
     
@@ -479,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/posts/YJBG1/</loc>
+    <loc>https://jiyu134.top/posts/YJBG2/</loc>
     
     <lastmod>2023-01-22</lastmod>
     
@@ -524,7 +524,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/posts/cc7e52cb/</loc>
+    <loc>https://jiyu134.top/posts/18233bf1/</loc>
     
     <lastmod>2023-01-07</lastmod>
     
@@ -533,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/posts/18233bf1/</loc>
+    <loc>https://jiyu134.top/posts/cc7e52cb/</loc>
     
     <lastmod>2023-01-07</lastmod>
     
@@ -671,13 +671,6 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jiyu134.top/tags/Butterfly/</loc>
     <lastmod>2023-11-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -685,7 +678,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/tags/%E7%A7%91%E6%8A%80/</loc>
+    <loc>https://jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2023-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -693,6 +686,13 @@
   
   <url>
     <loc>https://jiyu134.top/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <lastmod>2023-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jiyu134.top/tags/%E7%A7%91%E6%8A%80/</loc>
     <lastmod>2023-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -764,13 +764,6 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-11-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jiyu134.top/categories/Butterfly/</loc>
     <lastmod>2023-11-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -778,7 +771,7 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/categories/%E7%A7%91%E6%8A%80/</loc>
+    <loc>https://jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2023-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -786,6 +779,13 @@
   
   <url>
     <loc>https://jiyu134.top/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <lastmod>2023-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jiyu134.top/categories/%E7%A7%91%E6%8A%80/</loc>
     <lastmod>2023-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
