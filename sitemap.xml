@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jiyu134.top/posts/0/</loc>
+    
+    <lastmod>2024-02-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jiyu134.top/posts/nali/</loc>
     
     <lastmod>2024-02-08</lastmod>
@@ -716,14 +725,14 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://jiyu134.top/tags/Butterfly/</loc>
     <lastmod>2024-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jiyu134.top/tags/Butterfly/</loc>
+    <loc>https://jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -809,14 +818,14 @@
   </url>
   
   <url>
-    <loc>https://jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://jiyu134.top/categories/Butterfly/</loc>
     <lastmod>2024-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jiyu134.top/categories/Butterfly/</loc>
+    <loc>https://jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
