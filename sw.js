@@ -81,8 +81,8 @@ clean: true
 */
 const replaceList = {
 sample: {
-source: ['//www.jiyu134.top'],
-dist: '//jiyu134.top'
+source: ['//blog.jiyu134.top'],
+dist: '//blog.jiyu134.top'
 }
 }
 

@@ -3,4 +3,4 @@ B
 C
 D
 E
-download
+version
