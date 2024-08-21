@@ -156,11 +156,11 @@ document.write("<script>!function(p){\"use strict\";!function(t){var s=window,e=
 
 
 
-if(window.location.href == 'http://localhost:4000/about/'||window.location.href == 'https://jiyu134.top/about'){
+if(window.location.href == 'http://localhost:4000/about/'||window.location.href == 'https://blog.jiyu134.top/about'){
     Snackbar.show({ actionText: '关闭本弹窗',text: '可以动一动你们的小手给我一键三连吗？',backgroundColor: '#01f0ef',actionTextColor: '#0df016',pos: 'top-center',duration: '3000' });
   }
 
-if(window.location.href == 'http://localhost:4000/zzq/'||window.location.href == 'https://jiyu134.top/zzq'){
+if(window.location.href == 'http://localhost:4000/zzq/'||window.location.href == 'https://blog.jiyu134.top/zzq'){
     Snackbar.show({ actionText: '关闭本弹窗',text: '合理消费享受健康人生',backgroundColor: '#01f0ef',actionTextColor: '#0df016',pos: 'top-center',duration: '7000' });
   }
 
