@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.jiyu134.top/posts/ddd0/</loc>
+    
+    <lastmod>2024-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.jiyu134.top/posts/7149/</loc>
+    
+    <lastmod>2024-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.jiyu134.top/posts/ee6a/</loc>
+    
+    <lastmod>2024-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.jiyu134.top/posts/4fkr/</loc>
     
     <lastmod>2024-08-21</lastmod>
@@ -398,7 +425,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/posts/cc7e52cb/</loc>
+    <loc>https://blog.jiyu134.top/posts/18233bf1/</loc>
     
     <lastmod>2023-01-07</lastmod>
     
@@ -407,7 +434,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/posts/18233bf1/</loc>
+    <loc>https://blog.jiyu134.top/posts/cc7e52cb/</loc>
     
     <lastmod>2023-01-07</lastmod>
     
@@ -538,13 +565,6 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2024-08-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.jiyu134.top/tags/%E6%AF%8F%E5%B9%B4%E4%B8%80%E5%8D%A1/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -553,6 +573,13 @@
   
   <url>
     <loc>https://blog.jiyu134.top/tags/Butterfly/</loc>
+    <lastmod>2024-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -573,14 +600,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/tags/%E6%95%85%E4%BA%8B/</loc>
+    <loc>https://blog.jiyu134.top/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/tags/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <loc>https://blog.jiyu134.top/tags/%E6%95%85%E4%BA%8B/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -608,14 +635,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/tags/%E5%8E%9F%E7%A5%9E/</loc>
+    <loc>https://blog.jiyu134.top/tags/%E6%96%87%E7%AB%A0/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/tags/%E6%96%87%E7%AB%A0/</loc>
+    <loc>https://blog.jiyu134.top/tags/%E5%8E%9F%E7%A5%9E/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -645,14 +672,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://blog.jiyu134.top/categories/Butterfly/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/Butterfly/</loc>
+    <loc>https://blog.jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -680,14 +707,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/%E6%95%85%E4%BA%8B/</loc>
+    <loc>https://blog.jiyu134.top/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
+    <loc>https://blog.jiyu134.top/categories/%E6%95%85%E4%BA%8B/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -715,14 +742,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/%E5%8E%9F%E7%A5%9E/</loc>
+    <loc>https://blog.jiyu134.top/categories/%E6%96%87%E7%AB%A0/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/%E6%96%87%E7%AB%A0/</loc>
+    <loc>https://blog.jiyu134.top/categories/%E5%8E%9F%E7%A5%9E/</loc>
     <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
