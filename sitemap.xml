@@ -416,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/posts/YJBG2/</loc>
+    <loc>https://blog.jiyu134.top/posts/YJBG1/</loc>
     
     <lastmod>2023-01-22</lastmod>
     
@@ -425,7 +425,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/posts/YJBG1/</loc>
+    <loc>https://blog.jiyu134.top/posts/YJBG2/</loc>
     
     <lastmod>2023-01-22</lastmod>
     
@@ -443,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/posts/BK02/</loc>
+    <loc>https://blog.jiyu134.top/posts/BK01/</loc>
     
     <lastmod>2023-01-11</lastmod>
     
@@ -452,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/posts/BK01/</loc>
+    <loc>https://blog.jiyu134.top/posts/BK02/</loc>
     
     <lastmod>2023-01-11</lastmod>
     
@@ -608,20 +608,6 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/tags/%E6%AF%8F%E5%B9%B4%E4%B8%80%E5%8D%A1/</loc>
-    <lastmod>2025-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2025-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.jiyu134.top/tags/%E7%A7%91%E6%8A%80/</loc>
     <lastmod>2025-06-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -664,7 +650,21 @@
   </url>
   
   <url>
+    <loc>https://blog.jiyu134.top/tags/%E6%AF%8F%E5%B9%B4%E4%B8%80%E5%8D%A1/</loc>
+    <lastmod>2025-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.jiyu134.top/tags/furry-said-paws-truth/</loc>
+    <lastmod>2025-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.jiyu134.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2025-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -715,13 +715,6 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2025-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.jiyu134.top/categories/%E7%A7%91%E6%8A%80/</loc>
     <lastmod>2025-06-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -743,14 +736,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://blog.jiyu134.top/categories/furry-said-claw-truth/</loc>
     <lastmod>2025-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.jiyu134.top/categories/furry-said-claw-truth/</loc>
+    <loc>https://blog.jiyu134.top/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -772,6 +765,13 @@
   
   <url>
     <loc>https://blog.jiyu134.top/categories/furry-said-paws-truth/</loc>
+    <lastmod>2025-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.jiyu134.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2025-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
