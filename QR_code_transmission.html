@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二维码文件传输工具 (ECC)</title>
+    <!-- 加载外部库 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/elliptic/6.6.1/elliptic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kjua@0.10.0/dist/kjua.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --error-color: #e74c3c;
+            --bg-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --border-radius: 8px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            background-color: #34495e;
+        }
+        nav button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        nav button:hover, nav button.active {
+            background-color: var(--secondary-color);
+        }
+        main {
+            padding: 20px;
+        }
+        section { display: none; }
+        section.active { display: block; }
+        h2 { margin-top: 0; color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+        }
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #2980b9; }
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .status { padding: 10px; border-radius: var(--border-radius); margin-top: 10px; }
+        .status.info { background-color: #d6eaf8; border-left: 5px solid var(--secondary-color); }
+        .status.success { background-color: #d5f5e3; border-left: 5px solid var(--success-color); }
+        .status.error { background-color: #fadbd8; border-left: 5px solid var(--error-color); }
+        #slideshow-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #qr-slideshow {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+        }
+        #video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #video-preview {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+        }
+        #scan-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        #received-files-list, #sent-files-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-item {
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+        }
+        .file-item a {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+            background-color: var(--success-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .file-item a:hover {
+            background-color: #219653;
+        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #34495e;
+            color: white;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔒 二维码文件离线传输工具 (ECC)</h1>
+            <p>基于 secp256r1 椭圆曲线加密，纯前端实现</p>
+        </header>
+        <nav>
+            <button id="nav-send" class="active" onclick="switchView('view-send')">📤 发送文件</button>
+            <button id="nav-receive" onclick="switchView('view-receive')">📥 接收文件</button>
+            <button id="nav-keys" onclick="switchView('view-keys')">🔑 密钥管理</button>
+            <button id="nav-storage" onclick="switchView('view-storage')">💾 本地存储</button>
+        </nav>
+        <main>
+            <!-- 发送文件视图 -->
+            <section id="view-send" class="active">
+                <h2>📤 发送文件</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>1. 配置与上传</h3>
+                        <div class="form-group">
+                            <label for="sender-private-key-select">选择发送私钥 (Index 0-A):</label>
+                            <select id="sender-private-key-select">
+                                <option value="">-- 从存储中选择 --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sender-private-key">或输入私钥:</label>
+                            <textarea id="sender-private-key" rows="3" placeholder="请输入您的 64 位十六进制私钥..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="sender-files">选择文件 (最多25个):</label>
+                            <input type="file" id="sender-files" multiple accept="*/*">
+                        </div>
+                        <div class="form-group">
+                            <label for="chunk-size">块大小 (KB):</label>
+                            <input type="number" id="chunk-size" value="100" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="display-speed">幻灯片速度 (QR/s):</label>
+                            <input type="number" id="display-speed" value="2" min="1" max="10">
+                        </div>
+                        <button id="process-btn">⚙️ 处理并加密文件</button>
+                        <div id="sender-status" class="status info">请先配置密钥并选择文件。</div>
+                    </div>
+                    <div class="card">
+                        <h3>2. 生成二维码</h3>
+                        <div id="slideshow-container">
+                            <p>处理完成后，二维码将显示在这里。</p>
+                            <img id="qr-slideshow" style="display:none;" alt="QR Code Slideshow">
+                        </div>
+                        <button id="start-slideshow-btn" disabled>▶️ 开始幻灯片</button>
+                        <button id="stop-slideshow-btn" disabled>⏹️ 停止幻灯片</button>
+                        <p id="slideshow-info"></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>已处理的文件</h3>
+                    <ul id="sent-files-list"></ul>
+                </div>
+            </section>
+
+            <!-- 接收文件视图 -->
+            <section id="view-receive">
+                <h2>📥 接收文件</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>1. 扫描设置</h3>
+                        <div class="form-group">
+                            <label for="receiver-private-key-select">选择接收私钥:</label>
+                            <select id="receiver-private-key-select">
+                                <option value="">-- 从存储中选择 --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="receiver-private-key">或输入私钥:</label>
+                            <textarea id="receiver-private-key" rows="3" placeholder="请输入您的 64 位十六进制私钥..."></textarea>
+                        </div>
+                        <button id="start-scan-btn">📷 开始扫描摄像头</button>
+                        <button id="stop-scan-btn" disabled>🛑 停止扫描</button>
+                        <div id="receiver-status" class="status info">请先配置密钥并启动扫描。</div>
+                    </div>
+                    <div class="card">
+                        <h3>2. 扫描预览与进度</h3>
+                        <div id="video-container">
+                            <video id="video-preview" autoplay muted playsinline style="display:none;"></video>
+                            <p id="no-camera-msg">摄像头未启动或无信号。</p>
+                        </div>
+                        <div id="scan-progress">
+                            <span>已扫描: <span id="scanned-count">0</span></span>
+                            <span>速度: <span id="scan-speed">0</span> Kb/s</span>
+                        </div>
+                        <div id="scan-progress-bar-container" style="width:100%; background-color:#ddd; border-radius:5px; margin-top:10px;">
+                            <div id="scan-progress-bar" style="width:0%; height:20px; background-color:var(--success-color); border-radius:5px; transition: width 0.3s;"></div>
+                        </div>
+                    </div>
+                     <!-- 新增卡片：上传二维码图片 -->
+                     <div class="card">
+                        <h3>3. 上传二维码图片</h3>
+                        <div class="form-group">
+                            <label for="qr-image-upload">选择二维码图片文件:</label>
+                            <input type="file" id="qr-image-upload" accept="image/*" multiple>
+                            <p><small>支持 PNG, JPG, JPEG, GIF, WEBP 等图片格式。</small></p>
+                        </div>
+                        <button id="process-qr-images-btn">📸 处理选中的图片</button>
+                        <div id="upload-qr-status" class="status info">请选择图片文件并点击处理。</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>已接收的文件</h3>
+                    <ul id="received-files-list"></ul>
+                </div>
+            </section>
+
+            <!-- 密钥管理视图 -->
+            <section id="view-keys">
+                <h2>🔑 密钥管理</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>添加/编辑密钥</h3>
+                        <div class="form-group">
+                            <label for="key-name">密钥名称:</label>
+                            <input type="text" id="key-name" placeholder="例如: MyKey_A">
+                        </div>
+                        <div class="form-group">
+                            <label for="key-value">私钥 (64位十六进制):</label>
+                            <textarea id="key-value" rows="3" placeholder="请输入您的私钥..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="key-index">关联文件ID (A-Y):</label>
+                            <select id="key-index">
+                                <option value="">-- 选择 --</option>
+                                <!-- A-Y options will be populated by JS -->
+                            </select>
+                        </div>
+                        <button id="save-key-btn">💾 保存密钥</button>
+                        <button id="clear-keys-btn" style="background-color: var(--error-color);">🗑️ 清空所有密钥</button>
+                    </div>
+                    <div class="card">
+                        <h3>已存储的密钥</h3>
+                        <ul id="stored-keys-list"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 本地存储视图 -->
+            <section id="view-storage">
+                <h2>💾 本地存储</h2>
+                <div class="card">
+                    <h3>存储信息</h3>
+                    <p>此工具使用 <code>localStorage</code> (小数据) 和 <code>IndexedDB</code> (大数据如二维码图片、文件) 来存储数据。</p>
+                    <button id="clear-storage-btn" style="background-color: var(--error-color);">🧨 清除所有本地数据</button>
+                    <div id="storage-info"></div>
+                </div>
+                <div class="card">
+                    <h3>调试信息</h3>
+                    <details>
+                        <summary>点击查看/隐藏</summary>
+                        <pre id="debug-info">暂无调试信息</pre>
+                    </details>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>纯前端实现，数据不离开您的浏览器。基于您的文档要求构建。</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- 应用状态管理 ---
+        const AppState = {
+            currentView: 'view-send',
+            sender: {
+                privateKey: null,
+                files: [],
+                processedChunks: [],
+                slideshowInterval: null,
+                currentSlideIndex: 0
+            },
+            receiver: {
+                privateKey: null,
+                stream: null,
+                scanning: false,
+                receivedChunks: {}, // { fileId: { total, chunks: {index: {data, ephemeralPubKey, fileHash}} } }
+                scanCount: 0,
+                lastScanTime: 0,
+                totalExpected: 0
+            },
+            keys: JSON.parse(localStorage.getItem('ecc_keys') || '{}')
+        };
+
+        // --- DOM 元素缓存 ---
+        const DOM = {
+            // Navigation
+            navSend: document.getElementById('nav-send'),
+            navReceive: document.getElementById('nav-receive'),
+            navKeys: document.getElementById('nav-keys'),
+            navStorage: document.getElementById('nav-storage'),
+            // Views
+            viewSend: document.getElementById('view-send'),
+            viewReceive: document.getElementById('view-receive'),
+            viewKeys: document.getElementById('view-keys'),
+            viewStorage: document.getElementById('view-storage'),
+            // Sender
+            senderPrivateKeySelect: document.getElementById('sender-private-key-select'),
+            senderPrivateKey: document.getElementById('sender-private-key'),
+            senderFiles: document.getElementById('sender-files'),
+            chunkSize: document.getElementById('chunk-size'),
+            displaySpeed: document.getElementById('display-speed'),
+            processBtn: document.getElementById('process-btn'),
+            senderStatus: document.getElementById('sender-status'),
+            qrSlideshow: document.getElementById('qr-slideshow'),
+            startSlideshowBtn: document.getElementById('start-slideshow-btn'),
+            stopSlideshowBtn: document.getElementById('stop-slideshow-btn'),
+            slideshowInfo: document.getElementById('slideshow-info'),
+            sentFilesList: document.getElementById('sent-files-list'),
+            // Receiver
+            receiverPrivateKeySelect: document.getElementById('receiver-private-key-select'),
+            receiverPrivateKey: document.getElementById('receiver-private-key'),
+            startScanBtn: document.getElementById('start-scan-btn'),
+            stopScanBtn: document.getElementById('stop-scan-btn'),
+            receiverStatus: document.getElementById('receiver-status'),
+            videoPreview: document.getElementById('video-preview'),
+            noCameraMsg: document.getElementById('no-camera-msg'),
+            scannedCount: document.getElementById('scanned-count'),
+            scanSpeed: document.getElementById('scan-speed'),
+            scanProgressBar: document.getElementById('scan-progress-bar'),
+            receivedFilesList: document.getElementById('received-files-list'),
+            // 新增 DOM 元素
+            qrImageUpload: document.getElementById('qr-image-upload'),
+            processQrImagesBtn: document.getElementById('process-qr-images-btn'),
+            uploadQrStatus: document.getElementById('upload-qr-status'),
+            // Keys
+            keyName: document.getElementById('key-name'),
+            keyValue: document.getElementById('key-value'),
+            keyIndex: document.getElementById('key-index'),
+            saveKeyBtn: document.getElementById('save-key-btn'),
+            clearKeysBtn: document.getElementById('clear-keys-btn'),
+            storedKeysList: document.getElementById('stored-keys-list'),
+            // Storage
+            clearStorageBtn: document.getElementById('clear-storage-btn'),
+            storageInfo: document.getElementById('storage-info'),
+            debugInfo: document.getElementById('debug-info')
+        };
+
+        // --- UI 更新函数 ---
+        function switchView(viewId) {
+            // Hide all views
+            document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+            // Show selected view
+            document.getElementById(viewId).classList.add('active');
+            // Update nav active state
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`nav-${viewId.split('-')[1]}`).classList.add('active');
+            AppState.currentView = viewId;
+            logDebug(`切换到视图: ${viewId}`);
+        }
+
+        function updateStatus(element, message, type = 'info') {
+            element.textContent = message;
+            element.className = `status ${type}`;
+            logDebug(`状态更新 [${type}]: ${message}`);
+        }
+
+        function populateKeySelects() {
+            DOM.senderPrivateKeySelect.innerHTML = '<option value="">-- 从存储中选择 --</option>';
+            DOM.receiverPrivateKeySelect.innerHTML = '<option value="">-- 从存储中选择 --</option>';
+            for (const name in AppState.keys) {
+                const option = new Option(name, name);
+                DOM.senderPrivateKeySelect.add(option.cloneNode(true));
+                DOM.receiverPrivateKeySelect.add(option.cloneNode(true));
+            }
+        }
+
+        function populateKeyIndexSelect() {
+            DOM.keyIndex.innerHTML = '<option value="">-- 选择 --</option>';
+            for (let i = 0; i < 25; i++) {
+                const letter = String.fromCharCode(65 + i);
+                const option = new Option(`${letter} (Index ${i})`, i.toString());
+                DOM.keyIndex.add(option);
+            }
+        }
+
+        function updateSentFilesList() {
+            const list = DOM.sentFilesList;
+            list.innerHTML = '';
+            const item = document.createElement('li');
+            item.className = 'file-item';
+            item.innerHTML = '<p>处理后的文件和二维码会临时存储在浏览器中。</p>';
+            list.appendChild(item);
+        }
+
+        function updateReceivedFilesList() {
+            const list = DOM.receivedFilesList;
+            list.innerHTML = '';
+            
+            // 从 localStorage 获取已接收文件的元数据
+            const receivedMeta = JSON.parse(localStorage.getItem('received_files_meta') || '{}');
+            
+            if (Object.keys(receivedMeta).length === 0) {
+                const item = document.createElement('li');
+                item.className = 'file-item';
+                item.innerHTML = '<p>暂无已接收的文件。</p>';
+                list.appendChild(item);
+                return;
+            }
+
+            for (const fileId in receivedMeta) {
+                const meta = receivedMeta[fileId];
+                const item = document.createElement('li');
+                item.className = 'file-item';
+                item.innerHTML = `
+                    <strong>${meta.name}</strong> (${(meta.size / 1024).toFixed(2)} KB)
+                    <br>SHA256: <small>${meta.sha256.substring(0, 256)}...</small>
+                    <br>接收时间: ${new Date(meta.timestamp).toLocaleString()}
+                    <a href="#" data-file-id="${fileId}" class="download-link">💾 下载</a>
+                `;
+                list.appendChild(item);
+            }
+
+            // 绑定下载事件
+            document.querySelectorAll('.download-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const fileId = this.getAttribute('data-file-id');
+                    downloadReceivedFile(fileId);
+                });
+            });
+        }
+
+        function updateStoredKeysList() {
+            const list = DOM.storedKeysList;
+            list.innerHTML = '';
+            for (const name in AppState.keys) {
+                const key = AppState.keys[name];
+                const item = document.createElement('li');
+                item.className = 'file-item';
+                item.innerHTML = `
+                    <strong>${name}</strong>
+                    <br>关联ID: ${String.fromCharCode(65 + parseInt(key.index))}
+                    <br>值: <small>${key.value.substring(0, 16)}...</small>
+                    <button data-key-name="${name}" class="delete-key-btn" style="background-color:var(--error-color); margin-top:5px;">删除</button>
+                `;
+                list.appendChild(item);
+            }
+            
+            // 绑定删除事件
+            document.querySelectorAll('.delete-key-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const keyName = this.getAttribute('data-key-name');
+                    deleteKey(keyName);
+                });
+            });
+        }
+
+        function updateStorageInfo() {
+            const lsSize = JSON.stringify(localStorage).length;
+            const info = `localStorage 使用: ~${(lsSize / 1024).toFixed(2)} KB`;
+            DOM.storageInfo.innerHTML = `<p>${info}</p><p>IndexedDB 存储二维码和文件 (大小不在此显示)。</p>`;
+        }
+
+        function logDebug(message) {
+            const time = new Date().toISOString();
+            const logEntry = `[${time}] ${message}\n`;
+            const currentLog = DOM.debugInfo.textContent;
+            DOM.debugInfo.textContent = logEntry + currentLog;
+        }
+
+        // --- 密钥管理 ---
+        function saveKey() {
+            const name = DOM.keyName.value.trim();
+            const value = DOM.keyValue.value.trim();
+            const index = DOM.keyIndex.value;
+
+            if (!name || !value || !index) {
+                alert("请填写所有字段。");
+                return;
+            }
+            if (!/^[0-9a-fA-F]{64}$/.test(value)) {
+                alert("私钥必须是64位十六进制字符串。");
+                return;
+            }
+
+            AppState.keys[name] = { value, index };
+            localStorage.setItem('ecc_keys', JSON.stringify(AppState.keys));
+            updateStatus(DOM.senderStatus, `密钥 '${name}' 已保存。`, 'success');
+            populateKeySelects();
+            updateStoredKeysList();
+            logDebug(`密钥已保存: ${name}`);
+        }
+
+        function deleteKey(name) {
+            if (confirm(`确定要删除密钥 '${name}' 吗?`)) {
+                delete AppState.keys[name];
+                localStorage.setItem('ecc_keys', JSON.stringify(AppState.keys));
+                updateStoredKeysList();
+                populateKeySelects();
+                logDebug(`密钥已删除: ${name}`);
+            }
+        }
+
+        function clearAllKeys() {
+            if (confirm("确定要清空所有存储的密钥吗?")) {
+                AppState.keys = {};
+                localStorage.removeItem('ecc_keys');
+                updateStoredKeysList();
+                populateKeySelects();
+                logDebug("所有密钥已清空。");
+            }
+        }
+
+        // --- 发送端逻辑 ---
+        async function handleProcessFiles() {
+            const files = DOM.senderFiles.files;
+            if (files.length === 0) {
+                updateStatus(DOM.senderStatus, "请选择至少一个文件。", 'error');
+                return;
+            }
+            if (files.length > 25) {
+                updateStatus(DOM.senderStatus, "最多只能选择25个文件。", 'error');
+                return;
+            }
+
+            const privKeyHex = DOM.senderPrivateKey.value.trim();
+            if (!privKeyHex || !/^[0-9a-fA-F]{64}$/.test(privKeyHex)) {
+                updateStatus(DOM.senderStatus, "请输入有效的64位十六进制私钥。", 'error');
+                return;
+            }
+            AppState.sender.privateKey = privKeyHex;
+
+            const chunkSizeKb = parseInt(DOM.chunkSize.value) || 100;
+            const displaySpeed = parseInt(DOM.displaySpeed.value) || 2;
+            const delayMs = Math.round(1000 / displaySpeed);
+
+            updateStatus(DOM.senderStatus, "正在处理文件...", 'info');
+            DOM.processBtn.disabled = true;
+
+            try {
+                // 1. 排序文件并分配ID (A-Y)
+                const fileArray = Array.from(files);
+                fileArray.sort((a, b) => b.size - a.size);
+                const fileIds = {};
+                fileArray.forEach((file, index) => {
+                    if (index < 25) { // 限制在 A-Y
+                        fileIds[file.name] = String.fromCharCode(65 + index);
+                    }
+                });
+
+                // 2. 处理每个文件
+                AppState.sender.processedChunks = [];
+                // let totalChunks = 0; // 不再需要全局计数，每个文件有自己的总块数
+                for (const file of fileArray) {
+                    const fileId = fileIds[file.name];
+                    if (!fileId) continue; // 跳过超出范围的文件
+
+                    const arrayBuffer = await file.arrayBuffer();
+                    const base64Content = arrayBufferToBase64(arrayBuffer);
+                    const fileHash = await calculateSHA256(arrayBuffer); // 原始文件 SHA256
+                    const fileType = file.type || 'unknown';
+                    const fileName = file.name;
+                    // --- 提取文件名和后缀 ---
+                    const lastDotIndex = fileName.lastIndexOf('.');
+                    const baseFileName = lastDotIndex > 0 ? fileName.substring(0, lastDotIndex) : fileName;
+                    const fileExtension = lastDotIndex > 0 ? fileName.substring(lastDotIndex + 1) : '';
+                    // ---
+
+                    const chunks = splitString(base64Content, chunkSizeKb * 1024);
+                    // totalChunks += chunks.length; // 不再累加全局总数
+
+                    // --- 为当前文件创建元数据字符串 ---
+                    // 格式: ORIGINAL_FILENAME|ORIGINAL_EXTENSION|ORIGINAL_SHA256|TOTAL_CHUNKS
+                    const fileMetaDataString = `${baseFileName}|${fileExtension}|${fileHash}|${chunks.length}`;
+                    const fileMetaDataB64 = arrayBufferToBase64(new TextEncoder().encode(fileMetaDataString));
+                    // ---
+
+                    for (let i = 0; i < chunks.length; i++) {
+                        const chunkIndex = i + 1;
+                        // --- 将文件数据和元数据组合后再加密 ---
+                        // 格式: CHUNK_BASE64_DATA|FILE_METADATA_B64
+                        const dataToEncrypt = `${chunks[i]}|${fileMetaDataB64}`;
+                        const encryptedResult = await encryptDataWithECC(dataToEncrypt, privKeyHex); // encryptDataWithECC 需要能处理这个组合字符串
+                        // ---
+                        
+                        // --- 根据文档格式化二维码数据 ---
+                        // 格式: <EPHEMERAL_PUBKEY_HEX>-<ENCRYPTED_COMBINED_DATA_B64>-<CHUNK_ID>-<ORIGINAL_FILE_SHA256>-<TOTAL_CHUNKS>
+                        const qrDataStr = formatQRData(
+                            encryptedResult.encryptedDataB64, // 加密后的组合数据
+                            fileId,
+                            chunkIndex,
+                            chunks.length, // 当前文件的总块数
+                            encryptedResult.ephemeralPublicKeyHex,
+                            fileHash // 原始文件 SHA256
+                        );
+
+                        AppState.sender.processedChunks.push({
+                            dataStr: qrDataStr,
+                            fileId: fileId,
+                            index: chunkIndex
+                        });
+                    }
+                }
+
+                // 3. 生成二维码 (简化：只显示第一个)
+                if (AppState.sender.processedChunks.length > 0) {
+                    const firstChunkData = AppState.sender.processedChunks[0].dataStr;
+                    generateAndDisplayQR(firstChunkData);
+                    DOM.startSlideshowBtn.disabled = false;
+                    DOM.slideshowInfo.textContent = `共处理 ${AppState.sender.processedChunks.length} 个块。速度: ${delayMs} ms/块。`;
+                    updateStatus(DOM.senderStatus, `文件处理完成。`, 'success');
+                } else {
+                    throw new Error("未生成任何数据块。");
+                }
+
+            } catch (error) {
+                console.error("处理文件时出错:", error);
+                updateStatus(DOM.senderStatus, `处理失败: ${error.message}`, 'error');
+            } finally {
+                DOM.processBtn.disabled = false;
+            }
+        }
+
+        function generateAndDisplayQR(dataStr) {
+            try {
+                const qrCanvas = kjua({
+                    render: 'canvas',
+                    crisp: true,
+                    minVersion: 1,
+                    ecLevel: 'L',
+                    size: 300,
+                    ratio: 2, // For retina screens
+                    fill: '#333',
+                    back: '#fff',
+                    text: dataStr,
+                    rounded: 0,
+                    quiet: 1,
+                    mode: 'plain'
+                });
+                DOM.qrSlideshow.src = qrCanvas.toDataURL('image/png');
+                DOM.qrSlideshow.style.display = 'inline-block';
+                logDebug("二维码已生成并显示。");
+            } catch (e) {
+                console.error("生成二维码失败:", e);
+                updateStatus(DOM.senderStatus, `生成二维码失败: ${e.message}`, 'error');
+            }
+        }
+
+        function startSlideshow() {
+            if (AppState.sender.processedChunks.length === 0) return;
+
+            stopSlideshow(); // 确保之前没有运行
+            const displaySpeed = parseInt(DOM.displaySpeed.value) || 2;
+            const delayMs = Math.round(1000 / displaySpeed);
+
+            AppState.sender.currentSlideIndex = 0;
+            DOM.slideshowInfo.textContent = `幻灯片播放中... (${AppState.sender.currentSlideIndex + 1}/${AppState.sender.processedChunks.length})`;
+
+            AppState.sender.slideshowInterval = setInterval(() => {
+                AppState.sender.currentSlideIndex = (AppState.sender.currentSlideIndex + 1) % AppState.sender.processedChunks.length;
+                const currentChunk = AppState.sender.processedChunks[AppState.sender.currentSlideIndex];
+                generateAndDisplayQR(currentChunk.dataStr);
+                DOM.slideshowInfo.textContent = `幻灯片播放中... (${AppState.sender.currentSlideIndex + 1}/${AppState.sender.processedChunks.length})`;
+            }, delayMs);
+
+            DOM.startSlideshowBtn.disabled = true;
+            DOM.stopSlideshowBtn.disabled = false;
+            updateStatus(DOM.senderStatus, "幻灯片已开始播放。", 'info');
+        }
+
+        function stopSlideshow() {
+            if (AppState.sender.slideshowInterval) {
+                clearInterval(AppState.sender.slideshowInterval);
+                AppState.sender.slideshowInterval = null;
+            }
+            DOM.startSlideshowBtn.disabled = false;
+            DOM.stopSlideshowBtn.disabled = true;
+            updateStatus(DOM.senderStatus, "幻灯片已停止。", 'info');
+        }
+
+        // --- 接收端逻辑 ---
+        async function startScanning() {
+            const privKeyHex = DOM.receiverPrivateKey.value.trim();
+            if (!privKeyHex || !/^[0-9a-fA-F]{64}$/.test(privKeyHex)) {
+                updateStatus(DOM.receiverStatus, "请输入有效的64位十六进制私钥。", 'error');
+                return;
+            }
+            AppState.receiver.privateKey = privKeyHex;
+
+            try {
+                AppState.receiver.stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: 'environment' }
+                });
+                DOM.videoPreview.srcObject = AppState.receiver.stream;
+                DOM.videoPreview.style.display = 'inline-block';
+                DOM.noCameraMsg.style.display = 'none';
+                AppState.receiver.scanning = true;
+                AppState.receiver.scanCount = 0;
+                AppState.receiver.lastScanTime = performance.now();
+                AppState.receiver.receivedChunks = {};
+                updateStatus(DOM.receiverStatus, "摄像头已启动，开始扫描...", 'info');
+                DOM.startScanBtn.disabled = true;
+                DOM.stopScanBtn.disabled = false;
+                scanLoop();
+            } catch (err) {
+                console.error("访问摄像头失败:", err);
+                updateStatus(DOM.receiverStatus, `摄像头错误: ${err.message}`, 'error');
+            }
+        }
+
+        function stopScanning() {
+            AppState.receiver.scanning = false;
+            if (AppState.receiver.stream) {
+                const tracks = AppState.receiver.stream.getTracks();
+                tracks.forEach(track => track.stop());
+                AppState.receiver.stream = null;
+            }
+            DOM.videoPreview.style.display = 'none';
+            DOM.noCameraMsg.style.display = 'block';
+            DOM.startScanBtn.disabled = false;
+            DOM.stopScanBtn.disabled = true;
+            updateStatus(DOM.receiverStatus, "摄像头已停止。", 'info');
+        }
+
+        function scanLoop() {
+            // --- 添加检查 ---
+            if (typeof jsQR === 'undefined') {
+                console.error("jsQR library is not loaded. Scan loop cannot proceed.");
+                stopScanning();
+                updateStatus(DOM.receiverStatus, "jsQR库加载失败，请检查网络或刷新页面。", 'error');
+                return;
+            }
+            // --- 结束添加检查 ---
+
+            if (!AppState.receiver.scanning) return;
+
+            if (DOM.videoPreview.readyState === DOM.videoPreview.HAVE_ENOUGH_DATA) {
+                const canvas = document.createElement('canvas');
+                canvas.width = DOM.videoPreview.videoWidth;
+                canvas.height = DOM.videoPreview.videoHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(DOM.videoPreview, 0, 0, canvas.width, canvas.height);
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const code = jsQR(imageData.data, imageData.width, imageData.height, {
+                    inversionAttempts: "dontInvert",
+                });
+                if (code) {
+                    processScannedQR(code.data);
+                }
+            }
+            requestAnimationFrame(scanLoop);
+        }
+
+        async function processScannedQR(qrDataStr) {
+             try {
+                const parsedData = parseQRData(qrDataStr);
+                logDebug(`扫描到块: ${parsedData.fileId}${parsedData.index}`);
+
+                // 更新进度
+                AppState.receiver.scanCount++;
+                DOM.scannedCount.textContent = AppState.receiver.scanCount;
+
+                // 计算速度
+                const now = performance.now();
+                const elapsedSeconds = (now - AppState.receiver.lastScanTime) / 1000;
+                if (elapsedSeconds > 1) {
+                    const speedKbps = (AppState.receiver.scanCount * 50) / elapsedSeconds; // 假设50KB/块
+                    DOM.scanSpeed.textContent = speedKbps.toFixed(2);
+                    AppState.receiver.lastScanTime = now;
+                    AppState.receiver.scanCount = 0;
+                }
+
+                // 存储块
+                const fileId = parsedData.fileId;
+                if (!AppState.receiver.receivedChunks[fileId]) {
+                    AppState.receiver.receivedChunks[fileId] = { total: parsedData.total, chunks: {} };
+                }
+                // 避免重复处理同一个块
+                if (!(parsedData.index in AppState.receiver.receivedChunks[fileId].chunks)) {
+                    AppState.receiver.receivedChunks[fileId].chunks[parsedData.index] = {
+                        dataB64: parsedData.dataB64,
+                        ephemeralPubKeyHex: parsedData.ephemeralPubKeyHex,
+                        fileHash: parsedData.fileHash
+                    };
+
+                    // 更新进度条
+                    const totalReceived = Object.keys(AppState.receiver.receivedChunks[fileId].chunks).length;
+                    const progressPercent = (totalReceived / parsedData.total) * 100;
+                    DOM.scanProgressBar.style.width = `${progressPercent}%`;
+
+                    // 检查文件是否完整
+                    if (totalReceived === parsedData.total) {
+                        await assembleFile(fileId);
+                    }
+                }
+
+            } catch (error) {
+                console.error("处理扫描数据时出错:", error);
+                updateStatus(DOM.receiverStatus, `处理扫描数据时出错: ${error.message}`, 'error');
+                // 不中断扫描循环
+            }
+        }
+
+        async function assembleFile(fileId) {
+            const fileInfo = AppState.receiver.receivedChunks[fileId];
+            try {
+                updateStatus(DOM.receiverStatus, `正在组装文件 ${fileId}...`, 'info');
+                
+                let fullBase64Content = '';
+                let finalFileName = `received_file_${fileId}.dat`; // 默认名
+                let originalFileHash = ''; // 从二维码获取的原始哈希
+                let calculatedFileHash = ''; // 重组后计算的哈希
+                
+                const sortedIndices = Object.keys(fileInfo.chunks).map(Number).sort((a, b) => a - b);
+                
+                // --- 从第一个块解密并获取文件元数据 ---
+                if (sortedIndices.length > 0) {
+                    const firstChunk = fileInfo.chunks[sortedIndices[0]];
+                    const firstDecryptedData = await decryptDataWithECC(
+                        firstChunk.ephemeralPubKeyHex,
+                        firstChunk.dataB64,
+                        AppState.receiver.privateKey
+                    );
+                    // 解析第一个块解密后的数据，获取元数据
+                    const firstParts = firstDecryptedData.split('|');
+                    if (firstParts.length < 2) {
+                        throw new Error("第一个解密块数据格式无效，无法获取文件元数据。");
+                    }
+                    // 第一部分是数据，第二部分是元数据 Base64
+                    const metaDataB64 = firstParts[1];
+                    const metaDataBytes = base64ToArrayBuffer(metaDataB64);
+                    const metaDataString = new TextDecoder().decode(metaDataBytes);
+                    const metaDataParts = metaDataString.split('|');
+                    if (metaDataParts.length !== 4) {
+                        throw new Error("解密得到的文件元数据格式无效。");
+                    }
+                    const baseFileName = metaDataParts[0];
+                    const fileExtension = metaDataParts[1];
+                    originalFileHash = metaDataParts[2]; // 获取原始哈希
+                    // const totalChunksFromMeta = parseInt(metaDataParts[3]); // 可用于验证
+
+                    finalFileName = fileExtension ? `${baseFileName}.${fileExtension}` : baseFileName;
+                }
+                // --- 结束 ---
+
+                // --- 解密所有块并拼接文件数据 ---
+                for (const index of sortedIndices) {
+                    const chunk = fileInfo.chunks[index];
+                    const decryptedChunkData = await decryptDataWithECC(
+                        chunk.ephemeralPubKeyHex,
+                        chunk.dataB64,
+                        AppState.receiver.privateKey
+                    );
+                    // 从解密数据中提取文件内容部分 (第一部分)
+                    const dataParts = decryptedChunkData.split('|');
+                    if (dataParts.length < 1) {
+                        throw new Error(`解密块 ${index} 数据格式无效。`);
+                    }
+                    const chunkBase64Data = dataParts[0];
+                    fullBase64Content += chunkBase64Data;
+                }
+                // --- 结束 ---
+
+                const byteCharacters = atob(fullBase64Content);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+                const byteArray = new Uint8Array(byteNumbers);
+                const blob = new Blob([byteArray]);
+
+                // --- 使用从元数据中获取的文件名 ---
+                // finalFileName 已在上面设置
+                calculatedFileHash = await calculateSHA256(blob); // 重新计算以验证
+
+                // 保存到 localStorage (元数据) 和 IndexedDB (文件内容)
+                const fileMeta = {
+                    name: finalFileName, // 使用正确的文件名
+                    size: blob.size,
+                    sha256: calculatedFileHash, // 存储计算出的哈希
+                    originalSha256: originalFileHash, // 也存储原始哈希供比对
+                    timestamp: Date.now()
+                };
+                let receivedMeta = JSON.parse(localStorage.getItem('received_files_meta') || '{}');
+                receivedMeta[fileId] = fileMeta;
+                localStorage.setItem('received_files_meta', JSON.stringify(receivedMeta));
+
+                // 保存文件内容到 IndexedDB
+                await saveFileToIDB(fileId, blob);
+
+                // --- 显示哈希值对比 ---
+                const hashMatch = originalFileHash === calculatedFileHash;
+                const hashMessage = hashMatch ? 
+                    `<p style="color:green;">✅ 哈希值匹配！文件完整性已验证。</p>` : 
+                    `<p style="color:red;">❌ 哈希值不匹配！文件可能已损坏或被篡改。<br>原始: ${originalFileHash}<br>计算: ${calculatedFileHash}</p>`;
+                
+                updateStatus(DOM.receiverStatus, `文件 ${finalFileName} 接收并保存成功! ${hashMessage}`, 'success');
+                updateReceivedFilesList();
+                logDebug(`文件 ${finalFileName} 组装并保存成功。`);
+
+            } catch (e) {
+                console.error(`组装文件 ${fileId} 时出错:`, e);
+                updateStatus(DOM.receiverStatus, `组装文件 ${fileId} 失败: ${e.message}`, 'error');
+            }
+        }
+
+        async function downloadReceivedFile(fileId) {
+            try {
+                const blob = await getFileFromIDB(fileId);
+                if (!blob) {
+                    alert("文件未找到!");
+                    return;
+                }
+                
+                const meta = JSON.parse(localStorage.getItem('received_files_meta') || '{}')[fileId];
+                const filename = meta ? meta.name : `file_${fileId}`;
+
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                logDebug(`文件 ${fileId} 已触发下载。`);
+            } catch (e) {
+                console.error("下载文件时出错:", e);
+                alert("下载失败: " + e.message);
+            }
+        }
+
+
+        // --- IndexedDB 文件存储 ---
+        const DB_NAME = 'QRFileTransferDB';
+        const DB_VERSION = 1;
+        const STORE_NAME = 'files';
+
+        function openIDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => resolve(request.result);
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) {
+                        db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+                    }
+                };
+            });
+        }
+
+        async function saveFileToIDB(id, blob) {
+            const db = await openIDB();
+            const transaction = db.transaction([STORE_NAME], 'readwrite');
+            const store = transaction.objectStore(STORE_NAME);
+            return new Promise((resolve, reject) => {
+                const request = store.put({ id, blob });
+                request.onsuccess = () => {
+                    db.close();
+                    resolve();
+                };
+                request.onerror = () => {
+                    db.close();
+                    reject(request.error);
+                };
+            });
+        }
+
+        async function getFileFromIDB(id) {
+            const db = await openIDB();
+            const transaction = db.transaction([STORE_NAME], 'readonly');
+            const store = transaction.objectStore(STORE_NAME);
+            return new Promise((resolve, reject) => {
+                const request = store.get(id);
+                request.onsuccess = () => {
+                    db.close();
+                    resolve(request.result ? request.result.blob : null);
+                };
+                request.onerror = () => {
+                    db.close();
+                    reject(request.error);
+                };
+            });
+        }
+
+        // --- 加密/解密逻辑 (使用 elliptic 库) ---
+        const CURVE_NAME = 'p256'; // secp256r1
+        const SYMMETRIC_ALGORITHM = 'AES-GCM';
+        const IV_LENGTH = 12;
+        const SALT = new TextEncoder().encode("QR_FILE_TRANSFER_SALT");
+
+        function loadECCPrivateKey(privKeyHex) {
+            if (!window.elliptic) throw new Error("Elliptic library not loaded.");
+            const EC = window.elliptic.ec;
+            const ec = new EC(CURVE_NAME);
+            return ec.keyFromPrivate(privKeyHex, 'hex');
+        }
+
+        function deriveSharedSecret(privateKeyPair, publicKeyHex) {
+            if (!window.elliptic) throw new Error("Elliptic library not loaded.");
+            const EC = window.elliptic.ec;
+            const ec = new EC(CURVE_NAME);
+            const peerPublicKey = ec.keyFromPublic(publicKeyHex, 'hex');
+            const sharedPoint = peerPublicKey.getPublic().mul(privateKeyPair.getPrivate());
+            const sharedX = sharedPoint.getX();
+            const sharedSecretHex = sharedX.toString(16, 64);
+            return hexStringToArrayBuffer(sharedSecretHex);
+        }
+
+        async function deriveSymmetricKey(sharedSecretBuffer) {
+            const sharedSecretKey = await crypto.subtle.importKey('raw', sharedSecretBuffer, { name: 'HKDF' }, false, ['deriveKey']);
+            return await crypto.subtle.deriveKey(
+                { name: 'HKDF', hash: 'SHA-256', salt: SALT, info: new TextEncoder().encode("key") },
+                sharedSecretKey,
+                { name: SYMMETRIC_ALGORITHM, length: 256 },
+                true, ['encrypt', 'decrypt']
+            );
+        }
+
+        async function encryptDataWithECC(dataToEncrypt, masterPrivateKeyHex) {
+            if (!window.elliptic) throw new Error("Elliptic library not found.");
+            const EC = window.elliptic.ec;
+            const ec = new EC(CURVE_NAME);
+
+            const ephemeralKeyPair = ec.genKeyPair();
+            const ephemeralPublicKeyHex = ephemeralKeyPair.getPublic(true, 'hex'); // Compressed
+
+            const masterKeyPair = loadECCPrivateKey(masterPrivateKeyHex);
+            // ECDH: shared secret = ephemeral private key * master public key
+            // But for decryption, we use master private key * ephemeral public key
+            // Which yields the same shared secret point.
+            const sharedSecretBuffer = deriveSharedSecret(ephemeralKeyPair, masterKeyPair.getPublic(true, 'hex'));
+            const symmetricKey = await deriveSymmetricKey(sharedSecretBuffer);
+
+            const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH));
+            const encodedData = new TextEncoder().encode(dataToEncrypt);
+            const encryptedContent = await crypto.subtle.encrypt({ name: SYMMETRIC_ALGORITHM, iv: iv }, symmetricKey, encodedData);
+
+            const combinedBuffer = new Uint8Array(iv.length + encryptedContent.byteLength);
+            combinedBuffer.set(iv, 0);
+            combinedBuffer.set(new Uint8Array(encryptedContent), iv.length);
+            const encryptedDataB64 = arrayBufferToBase64(combinedBuffer);
+
+            return { encryptedDataB64, ephemeralPublicKeyHex };
+        }
+
+        async function decryptDataWithECC(ephemeralPublicKeyHex, encryptedDataB64, masterPrivateKeyHex) {
+            if (!window.elliptic) throw new Error("Elliptic library not found.");
+
+            const masterKeyPair = loadECCPrivateKey(masterPrivateKeyHex);
+            // ECDH: shared secret = master private key * ephemeral public key
+            const sharedSecretBuffer = deriveSharedSecret(masterKeyPair, ephemeralPublicKeyHex);
+            const symmetricKey = await deriveSymmetricKey(sharedSecretBuffer);
+
+            const combinedBuffer = base64ToArrayBuffer(encryptedDataB64);
+            const iv = combinedBuffer.slice(0, IV_LENGTH);
+            const encryptedData = combinedBuffer.slice(IV_LENGTH);
+
+            const decryptedContent = await crypto.subtle.decrypt({ name: SYMMETRIC_ALGORITHM, iv: iv }, symmetricKey, encryptedData);
+            return new TextDecoder().decode(decryptedContent);
+        }
+
+        // --- 工具函数 ---
+        async function calculateSHA256(data) {
+            const buffer = data instanceof ArrayBuffer ? data : await new Blob([data]).arrayBuffer();
+            const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+        }
+
+        function arrayBufferToBase64(buffer) {
+            let binary = '';
+            const bytes = new Uint8Array(buffer);
+            const len = bytes.byteLength;
+            for (let i = 0; i < len; i++) {
+                binary += String.fromCharCode(bytes[i]);
+            }
+            return btoa(binary);
+        }
+
+        function base64ToArrayBuffer(base64) {
+            const binary_string = atob(base64);
+            const len = binary_string.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binary_string.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
+
+        function splitString(str, chunkSize) {
+            const chunks = [];
+            for (let i = 0; i < str.length; i += chunkSize) {
+                chunks.push(str.slice(i, i + chunkSize));
+            }
+            return chunks;
+        }
+
+        // 根据文档格式化二维码数据
+        // 格式: <EPHEMERAL_PUBKEY_HEX>-<ENCRYPTED_DATA_B64>-<CHUNK_ID>-<FILE_SHA256>-<TOTAL>
+        function formatQRData(dataToEncryptB64, fileId, index, total, ephemeralPubKeyHex, fileHash) {
+            const chunkId = `${fileId}${index}`;
+            return `${ephemeralPubKeyHex}-${dataToEncryptB64}-${chunkId}-${fileHash}-${total}`;
+        }
+
+        // 解析格式化的二维码数据字符串
+        // 格式: <EPHEMERAL_PUBKEY_HEX>-<ENCRYPTED_DATA_B64>-<CHUNK_ID>-<FILE_SHA256>-<TOTAL>
+        function parseQRData(qrDataStr) {
+            const parts = qrDataStr.split('-');
+            if (parts.length < 5) throw new Error("二维码数据格式无效");
+            const ephemeralPubKeyHex = parts[0];
+            const dataB64 = parts[1];
+            const chunkId = parts[2];
+            const fileHash = parts[3];
+            const totalStr = parts[4];
+
+            const match = chunkId.match(/^([A-Y])(\d+)$/);
+            if (!match) throw new Error("块 ID 格式无效");
+            const fileId = match[1];
+            const index = parseInt(match[2], 10);
+
+            return { ephemeralPubKeyHex, dataB64, fileId, index, fileHash, total: parseInt(totalStr, 10) };
+        }
+
+        function hexStringToArrayBuffer(hexString) {
+            if (hexString.length % 2 !== 0) throw new Error("Hex string must have an even number of characters");
+            const length = hexString.length / 2;
+            const buffer = new ArrayBuffer(length);
+            const view = new Uint8Array(buffer);
+            for (let i = 0; i < length; i++) {
+                view[i] = parseInt(hexString.substr(i * 2, 2), 16);
+            }
+            return buffer;
+        }
+
+        function clearAllStorage() {
+            if (confirm("⚠️ 警告: 这将清除所有本地数据(密钥、已收文件等)。确定吗?")) {
+                localStorage.clear();
+                // Clear IndexedDB
+                const deleteReq = indexedDB.deleteDatabase(DB_NAME);
+                deleteReq.onsuccess = () => {
+                    alert("所有本地数据已清除。");
+                    location.reload(); // 重新加载页面以重置应用状态
+                };
+                deleteReq.onerror = () => {
+                    alert("清除 IndexedDB 时出错。");
+                };
+            }
+        }
+
+        // --- 新增：处理上传的二维码图片 ---
+        async function handleQrImageUpload() {
+            const files = DOM.qrImageUpload.files;
+            if (files.length === 0) {
+                updateStatus(DOM.uploadQrStatus, "请选择至少一个图片文件。", 'error');
+                return;
+            }
+
+            updateStatus(DOM.uploadQrStatus, `正在处理 ${files.length} 个图片文件...`, 'info');
+            DOM.processQrImagesBtn.disabled = true;
+
+            let processedCount = 0;
+            let successCount = 0;
+
+            try {
+                for (const file of files) {
+                    processedCount++;
+                    updateStatus(DOM.uploadQrStatus, `正在处理 (${processedCount}/${files.length}): ${file.name}...`, 'info');
+
+                    try {
+                        const dataUrl = await new Promise((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.onload = e => resolve(e.target.result);
+                            reader.onerror = reject;
+                            reader.readAsDataURL(file);
+                        });
+
+                        // 创建一个临时的 Image 对象来获取尺寸
+                        const img = new Image();
+                        const imgLoadPromise = new Promise((resolve, reject) => {
+                            img.onload = resolve;
+                            img.onerror = reject;
+                            img.src = dataUrl;
+                        });
+
+                        await imgLoadPromise;
+
+                        // 创建 canvas 并绘制图片
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0, img.width, img.height);
+
+                        // 获取图像数据并使用 jsQR 解码
+                        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                        const code = jsQR(imageData.data, imageData.width, imageData.height);
+
+                        if (code) {
+                            successCount++;
+                            logDebug(`从图片 ${file.name} 成功解码二维码: ${code.data}`);
+                            // 复用已有的 processScannedQR 函数来处理解码后的数据
+                            await processScannedQR(code.data);
+                        } else {
+                            logDebug(`未能从图片 ${file.name} 解码出二维码。`);
+                            updateStatus(DOM.uploadQrStatus, `未能从图片 ${file.name} 解码出二维码。`, 'error');
+                        }
+                    } catch (e) {
+                        console.error(`处理图片 ${file.name} 时出错:`, e);
+                        updateStatus(DOM.uploadQrStatus, `处理图片 ${file.name} 时出错: ${e.message}`, 'error');
+                    }
+                }
+
+                updateStatus(DOM.uploadQrStatus, `处理完成。共处理 ${files.length} 个文件，成功解码 ${successCount} 个。`, 'success');
+
+            } finally {
+                DOM.processQrImagesBtn.disabled = false;
+            }
+        }
+        // --- 结束新增 ---
+
+
+        // --- 初始化 ---
+        function initApp() {
+            console.log("应用初始化...");
+            
+            // 绑定事件 (直接在 DOM 元素上绑定了 onclick，这里绑定其他事件)
+            DOM.processBtn.addEventListener('click', handleProcessFiles);
+            DOM.startSlideshowBtn.addEventListener('click', startSlideshow);
+            DOM.stopSlideshowBtn.addEventListener('click', stopSlideshow);
+
+            DOM.startScanBtn.addEventListener('click', startScanning);
+            DOM.stopScanBtn.addEventListener('click', stopScanning);
+
+            DOM.saveKeyBtn.addEventListener('click', saveKey);
+            DOM.clearKeysBtn.addEventListener('click', clearAllKeys);
+
+            DOM.clearStorageBtn.addEventListener('click', clearAllStorage);
+
+            // --- 新增事件监听 ---
+            DOM.processQrImagesBtn.addEventListener('click', handleQrImageUpload);
+            // --- 结束新增 ---
+
+            // 自动填充密钥选择框
+            DOM.senderPrivateKeySelect.addEventListener('change', function() {
+                const keyName = this.value;
+                if (keyName && AppState.keys[keyName]) {
+                    DOM.senderPrivateKey.value = AppState.keys[keyName].value;
+                    AppState.sender.privateKey = AppState.keys[keyName].value;
+                }
+            });
+            DOM.receiverPrivateKeySelect.addEventListener('change', function() {
+                const keyName = this.value;
+                if (keyName && AppState.keys[keyName]) {
+                    DOM.receiverPrivateKey.value = AppState.keys[keyName].value;
+                    AppState.receiver.privateKey = AppState.keys[keyName].value;
+                }
+            });
+
+            populateKeySelects();
+            populateKeyIndexSelect();
+            updateStoredKeysList();
+            updateSentFilesList();
+            updateReceivedFilesList();
+            updateStorageInfo();
+            
+            logDebug("应用初始化完成。");
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
